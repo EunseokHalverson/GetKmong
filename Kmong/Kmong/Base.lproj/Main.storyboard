@@ -320,22 +320,45 @@
                         <outlet property="homeTableView" destination="MTu-xf-nhE" id="aDi-f1-6cw"/>
                         <outlet property="homeUrlView" destination="CFc-p5-NRj" id="6ZV-OH-qGf"/>
                         <outlet property="scroll" destination="a8T-jr-TUe" id="a9T-sq-086"/>
+                        <segue destination="Mny-kX-3R0" kind="show" id="1vc-Mi-Smp"/>
+                        <segue destination="IHf-ja-zxv" kind="show" id="TrP-B5-bvn"/>
+                        <segue destination="CCN-dc-SQH" kind="show" id="g5G-G1-P4F"/>
+                        <segue destination="16r-RT-1u7" kind="show" id="TNu-Le-Fk6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f4k-hG-uLc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1668" y="30.134932533733135"/>
+            <point key="canvasLocation" x="2145" y="30"/>
         </scene>
-        <!--View Controller-->
+        <!--Home PageVC-->
         <scene sceneID="Pji-Bx-WYa">
             <objects>
-                <viewController storyboardIdentifier="HomePageView" id="Mny-kX-3R0" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ViZ-NO-2u4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="HomePageView" id="Mny-kX-3R0" customClass="HomePageVC" customModule="Kmong" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MgN-ON-g81">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2OU-Mc-fvo">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I0C-Eb-UP1">
+                                        <rect key="frame" x="127" y="48" width="240" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="niu-KV-k4Z">
+                                        <rect key="frame" x="8" y="71" width="42" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7C4-Qx-DVA">
+                                        <rect key="frame" x="8" y="146" width="46" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" red="1" green="0.062111125651873933" blue="0.082190028131019388" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                         </subviews>
@@ -348,10 +371,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YhB-2s-soU"/>
                     </view>
+                    <connections>
+                        <outlet property="homeImg" destination="I0C-Eb-UP1" id="dwE-su-pA3"/>
+                        <outlet property="homeLbl" destination="niu-KV-k4Z" id="ZdO-vr-ivN"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ViZ-NO-2u4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2472.8000000000002" y="-689.5052473763119"/>
+            <point key="canvasLocation" x="1132" y="788"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hDB-Pe-4Wm">
@@ -378,7 +404,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14c-dm-Luw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3308" y="-695"/>
+            <point key="canvasLocation" x="1810" y="788"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="cwX-Gg-T22">
@@ -405,7 +431,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FaC-cM-eso" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4188" y="-727"/>
+            <point key="canvasLocation" x="2498" y="788"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="w1r-Uh-fwX">
@@ -432,7 +458,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9pS-sH-vpn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5011" y="-706"/>
+            <point key="canvasLocation" x="3169" y="788"/>
         </scene>
         <!--Back Button-->
         <scene sceneID="Im9-nn-o5g">
@@ -524,7 +550,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RYy-BR-Mjd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2546" y="833"/>
+            <point key="canvasLocation" x="5342" y="28"/>
         </scene>
         <!--Back Button-->
         <scene sceneID="Xf9-Gn-k9k">
@@ -605,7 +631,7 @@ Experience in
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cq8-pD-Meo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1668" y="1684"/>
+            <point key="canvasLocation" x="4623" y="788"/>
         </scene>
         <!--Back Button-->
         <scene sceneID="d7i-ux-xHH">
@@ -728,7 +754,7 @@ Experience in
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zzV-j1-xRD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="815" y="1684"/>
+            <point key="canvasLocation" x="3884" y="788"/>
         </scene>
         <!--CategoryVC-->
         <scene sceneID="x2S-1O-vxp">
@@ -844,7 +870,7 @@ Experience in
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kRg-aJ-Ghv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1668" y="834"/>
+            <point key="canvasLocation" x="4506" y="31"/>
         </scene>
         <!--Back Button-->
         <scene sceneID="6bM-fw-bLN">
@@ -912,7 +938,7 @@ Experience in
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1W8-GP-ilx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2545" y="1647"/>
+            <point key="canvasLocation" x="5342" y="788"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="UBm-pY-8t5">
@@ -988,7 +1014,7 @@ Experience in
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6wk-XK-0hq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4124" y="704"/>
+            <point key="canvasLocation" x="6628" y="957"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Rln-oh-MPq">
@@ -1032,7 +1058,7 @@ Experience in
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cM1-Do-Dbu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4124" y="31"/>
+            <point key="canvasLocation" x="6206" y="-1"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="RKf-u9-bcF">
@@ -1092,7 +1118,7 @@ Experience in
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Su4-J7-s2g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4847" y="31"/>
+            <point key="canvasLocation" x="7278" y="315"/>
         </scene>
     </scenes>
     <resources>
