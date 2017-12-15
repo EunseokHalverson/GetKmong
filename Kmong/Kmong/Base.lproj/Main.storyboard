@@ -209,7 +209,7 @@
                                     <constraint firstAttribute="height" constant="70" id="kTc-vS-hfG"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b8g-Wh-L2g">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b8g-Wh-L2g">
                                 <rect key="frame" x="0.0" y="70" width="375" height="527"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -217,7 +217,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="171"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sar-lK-Y8c" id="BY0-Xt-shH">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="170.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="171"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="#학력&amp;전공" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdT-QC-QTT">
@@ -309,6 +309,7 @@
 
 입사동기와 포부
 …..</string>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -324,7 +325,7 @@
                                 <string key="text">할버슨은석
 26 (남)</string>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#자기소개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FV2-Tz-UtT">
@@ -395,10 +396,29 @@
                                             <action selector="backBtnPressed:" destination="qkk-Bf-drn" eventType="touchUpInside" id="g9I-Ll-l6e"/>
                                         </connections>
                                     </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="경험" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8uo-h1-6Ul">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8uo-h1-6Ul">
                                         <rect key="frame" x="20" y="86" width="335" height="561"/>
                                         <color key="backgroundColor" red="0.97647058819999999" green="0.83137254900000002" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <string key="text">
+UIC Arduino Course TA
+2016.08~2017.01
+
+GeekSquad Repair Assist
+2012.07 ~ 2013.04
+
+BestBuy Sales
+2011.06 ~ 2012.01
+
+
+
+Experience in
+
+언어: Swift, Java, C, C++, mySQL
+툴: Xcode, Unity3D, Android Studio, Visual Studio
+
+</string>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
@@ -451,37 +471,90 @@
                                             <action selector="backBtnPressed:" destination="ZoM-5D-Thf" eventType="touchUpInside" id="fV3-Dt-Kj7"/>
                                         </connections>
                                     </button>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1Vs-OI-eoy">
-                                        <rect key="frame" x="0.0" y="126" width="375" height="541"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="40" id="zkK-zb-0tp">
-                                                <rect key="frame" x="0.0" y="28" width="375" height="40"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zkK-zb-0tp" id="zuT-AH-QO8">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="39.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </tableViewCellContentView>
-                                            </tableViewCell>
-                                        </prototypes>
-                                    </tableView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#학력&amp;전공" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ysV-IA-vXw">
                                         <rect key="frame" x="147" y="35" width="81" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unnamed" translatesAutoresizingMaskIntoConstraints="NO" id="gtt-lj-Zgm" customClass="CircleImage" customModule="Kmong" customModuleProvider="target">
+                                        <rect key="frame" x="137.5" y="292" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="74b-fb-8Gk"/>
+                                            <constraint firstAttribute="height" constant="100" id="H7B-6P-zQ0"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="images" translatesAutoresizingMaskIntoConstraints="NO" id="EBJ-x7-w2W" customClass="CircleImage" customModule="Kmong" customModuleProvider="target">
+                                        <rect key="frame" x="137.5" y="478" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="7gb-WW-g45"/>
+                                            <constraint firstAttribute="width" constant="100" id="WYj-nI-cH8"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afQ-pU-AIP">
+                                        <rect key="frame" x="70" y="211" width="235" height="61"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="61" id="5OG-Xp-REU"/>
+                                            <constraint firstAttribute="width" constant="235" id="Wbs-gj-g75"/>
+                                        </constraints>
+                                        <string key="text">University of Illinois at Chicago
+2014 ~ 2017 
+컴퓨터공학 전공</string>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mWu-UF-Jlf">
+                                        <rect key="frame" x="72.5" y="397" width="230" height="61"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="230" id="1Wc-UE-Aim"/>
+                                            <constraint firstAttribute="height" constant="61" id="sca-Zz-N9T"/>
+                                        </constraints>
+                                        <string key="text">William Rainey Harper College
+2011 ~ 2014 
+컴퓨터공학 전공</string>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zj5-1d-L2e">
+                                        <rect key="frame" x="72" y="583" width="231" height="51"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="51" id="FNN-eZ-5UF"/>
+                                            <constraint firstAttribute="width" constant="231" id="bOo-cI-JPd"/>
+                                        </constraints>
+                                        <string key="text">Burlington Central HighSchool
+2007 ~ 2011</string>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uic" translatesAutoresizingMaskIntoConstraints="NO" id="z3I-0J-pHS" customClass="CircleImage" customModule="Kmong" customModuleProvider="target">
+                                        <rect key="frame" x="137" y="106" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="7zS-xV-bAO"/>
+                                            <constraint firstAttribute="height" constant="100" id="Ygq-Mf-qQg"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.97647058819999999" green="0.83137254900000002" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="z3I-0J-pHS" firstAttribute="top" secondItem="ysV-IA-vXw" secondAttribute="bottom" constant="50" id="1Na-0u-C1q"/>
                                     <constraint firstItem="ysV-IA-vXw" firstAttribute="centerX" secondItem="Wr0-dY-C8X" secondAttribute="centerX" id="78q-Ar-Jhb"/>
                                     <constraint firstItem="ysV-IA-vXw" firstAttribute="top" secondItem="Wr0-dY-C8X" secondAttribute="top" constant="35" id="APM-Ab-ODx"/>
+                                    <constraint firstItem="gtt-lj-Zgm" firstAttribute="centerX" secondItem="Wr0-dY-C8X" secondAttribute="centerX" id="Dtm-yO-kQo"/>
                                     <constraint firstItem="c6t-p4-phh" firstAttribute="top" secondItem="Wr0-dY-C8X" secondAttribute="top" constant="25" id="FWo-W6-gyx"/>
-                                    <constraint firstItem="1Vs-OI-eoy" firstAttribute="leading" secondItem="Wr0-dY-C8X" secondAttribute="leading" id="Gv6-Uy-t0j"/>
-                                    <constraint firstItem="1Vs-OI-eoy" firstAttribute="top" secondItem="ysV-IA-vXw" secondAttribute="bottom" constant="70" id="HDe-8q-T1D"/>
-                                    <constraint firstAttribute="trailing" secondItem="1Vs-OI-eoy" secondAttribute="trailing" id="cK1-bv-dpf"/>
+                                    <constraint firstItem="mWu-UF-Jlf" firstAttribute="centerX" secondItem="Wr0-dY-C8X" secondAttribute="centerX" id="Iqj-8Z-zRG"/>
+                                    <constraint firstItem="EBJ-x7-w2W" firstAttribute="centerX" secondItem="Wr0-dY-C8X" secondAttribute="centerX" id="JFS-2S-iBd"/>
+                                    <constraint firstItem="mWu-UF-Jlf" firstAttribute="top" secondItem="gtt-lj-Zgm" secondAttribute="bottom" constant="5" id="Vuq-TN-dPt"/>
+                                    <constraint firstItem="gtt-lj-Zgm" firstAttribute="top" secondItem="afQ-pU-AIP" secondAttribute="bottom" constant="20" id="W6L-FI-cOp"/>
+                                    <constraint firstItem="afQ-pU-AIP" firstAttribute="top" secondItem="z3I-0J-pHS" secondAttribute="bottom" constant="5" id="f3S-Xx-hXo"/>
+                                    <constraint firstItem="Zj5-1d-L2e" firstAttribute="top" secondItem="EBJ-x7-w2W" secondAttribute="bottom" constant="5" id="hON-rS-PCM"/>
                                     <constraint firstItem="c6t-p4-phh" firstAttribute="leading" secondItem="Wr0-dY-C8X" secondAttribute="leading" id="n85-Fj-eql"/>
-                                    <constraint firstAttribute="bottom" secondItem="1Vs-OI-eoy" secondAttribute="bottom" id="voq-rf-o8k"/>
+                                    <constraint firstItem="afQ-pU-AIP" firstAttribute="centerX" secondItem="Wr0-dY-C8X" secondAttribute="centerX" id="nfE-li-bVk"/>
+                                    <constraint firstItem="z3I-0J-pHS" firstAttribute="centerX" secondItem="Wr0-dY-C8X" secondAttribute="centerX" id="qdk-Zn-AaC"/>
+                                    <constraint firstItem="EBJ-x7-w2W" firstAttribute="top" secondItem="mWu-UF-Jlf" secondAttribute="bottom" constant="20" id="yHb-Ne-28N"/>
+                                    <constraint firstItem="Zj5-1d-L2e" firstAttribute="centerX" secondItem="Wr0-dY-C8X" secondAttribute="centerX" id="zqS-JQ-hq6"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -632,10 +705,16 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="연락" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="giG-Fi-mTa">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="giG-Fi-mTa">
                                         <rect key="frame" x="20" y="86" width="335" height="561"/>
                                         <color key="backgroundColor" red="0.97647058819999999" green="0.83137254900000002" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <string key="text">이름: 할버슨은석
+생년월일: 1992년 01월 21일
+주소: 경기도 군포시 수리산로 102, 853동 1509호
+휴대폰: 010-3637-4841
+이메일: es.halvers@gmail.com</string>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
@@ -1636,9 +1715,12 @@ CqEMoRGhGbKFsoeyjLKasp6ypbKqsreyurLHssyy1LLXstyy5LLnsvmy/LMBAAAAAAAAAgEAAAAAAAAA
 WQAAAAAAAAAAAAAAAAAAswM
 </mutableData>
         </image>
+        <image name="images" width="352" height="143"/>
         <image name="menu.png" width="128" height="128"/>
         <image name="message.png" width="128" height="128"/>
         <image name="next" width="128" height="128"/>
         <image name="resumeImg" width="104" height="139"/>
+        <image name="uic" width="225" height="225"/>
+        <image name="unnamed" width="170" height="170"/>
     </resources>
 </document>
