@@ -13,7 +13,7 @@ class CategoryCell: UITableViewCell {
     @IBOutlet weak var categoryImg: UIImageView!
     @IBOutlet weak var categoryLbl: UILabel!
     
-    func updateView(category: PageCategory){
+    func updateView(category: Category){
         categoryImg.image = UIImage(named: category.imageName)
         categoryLbl.text = category.title
         

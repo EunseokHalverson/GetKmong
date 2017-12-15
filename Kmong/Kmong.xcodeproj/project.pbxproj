@@ -11,20 +11,24 @@
 		5992C7A029B8BAEB904D15C6 /* Pods_KmongTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F78CA27EC5AE6A99A76F9E65 /* Pods_KmongTests.framework */; };
 		651D21241FE1AE7B000FD273 /* CategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651D21231FE1AE7B000FD273 /* CategoryVC.swift */; };
 		651D21261FE1AF6F000FD273 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651D21251FE1AF6F000FD273 /* CategoryCell.swift */; };
-		651E648D1FE1911C004F55BC /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651E648C1FE1911C004F55BC /* HomeVC.swift */; };
-		653394E51FE17951004F8EE3 /* dataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653394E41FE17951004F8EE3 /* dataService.swift */; };
-		653394E71FE179CD004F8EE3 /* PageCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653394E61FE179CD004F8EE3 /* PageCategory.swift */; };
+		651E648D1FE1911C004F55BC /* SubMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651E648C1FE1911C004F55BC /* SubMainVC.swift */; };
+		653394E51FE17951004F8EE3 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653394E41FE17951004F8EE3 /* DataService.swift */; };
+		653394E71FE179CD004F8EE3 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653394E61FE179CD004F8EE3 /* Category.swift */; };
 		656D33311FE1212E00787069 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656D33301FE1212E00787069 /* AppDelegate.swift */; };
 		656D33361FE1212E00787069 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 656D33341FE1212E00787069 /* Main.storyboard */; };
 		656D33381FE1212E00787069 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 656D33371FE1212E00787069 /* Assets.xcassets */; };
 		656D333B1FE1212E00787069 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 656D33391FE1212E00787069 /* LaunchScreen.storyboard */; };
 		656D33461FE1212E00787069 /* KmongTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656D33451FE1212E00787069 /* KmongTests.swift */; };
 		656D33511FE1212E00787069 /* KmongUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656D33501FE1212E00787069 /* KmongUITests.swift */; };
+		657085931FE431B500969621 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657085921FE431B500969621 /* BackButton.swift */; };
+		657085951FE4326C00969621 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657085941FE4326C00969621 /* HomeVC.swift */; };
 		6570B1691FE176DD00CE09DB /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6570B1681FE176DD00CE09DB /* RoundedButton.swift */; };
 		6587ECD01FE1247A00A617EF /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6587ECCE1FE1247A00A617EF /* SWRevealViewController.m */; };
-		6587ECD21FE1250500A617EF /* mainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587ECD11FE1250500A617EF /* mainVC.swift */; };
+		6587ECD21FE1250500A617EF /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587ECD11FE1250500A617EF /* MainVC.swift */; };
+		65AD43E61FE434A1006388FA /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AD43E51FE434A1006388FA /* HomeCell.swift */; };
+		65AD43E81FE43597006388FA /* HomeItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AD43E71FE43597006388FA /* HomeItemCell.swift */; };
+		65AD43EA1FE435B0006388FA /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AD43E91FE435B0006388FA /* Item.swift */; };
 		65C507A51FE2DC3600A30675 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C507A41FE2DC3600A30675 /* CircleImage.swift */; };
-		65C507AB1FE2E27800A30675 /* SubCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C507AA1FE2E27800A30675 /* SubCategoryVC.swift */; };
 		6AA5C2598081FBA5B53D0916 /* Pods_Kmong.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B34C4E3ABD35BEB6851479F7 /* Pods_Kmong.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,9 +53,9 @@
 		0D1FC797DB0DA5A89B38A831 /* Pods-KmongTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KmongTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KmongTests/Pods-KmongTests.release.xcconfig"; sourceTree = "<group>"; };
 		651D21231FE1AE7B000FD273 /* CategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryVC.swift; sourceTree = "<group>"; };
 		651D21251FE1AF6F000FD273 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
-		651E648C1FE1911C004F55BC /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
-		653394E41FE17951004F8EE3 /* dataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataService.swift; sourceTree = "<group>"; };
-		653394E61FE179CD004F8EE3 /* PageCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCategory.swift; sourceTree = "<group>"; };
+		651E648C1FE1911C004F55BC /* SubMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubMainVC.swift; sourceTree = "<group>"; };
+		653394E41FE17951004F8EE3 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		653394E61FE179CD004F8EE3 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		656D332D1FE1212E00787069 /* Kmong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kmong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		656D33301FE1212E00787069 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		656D33351FE1212E00787069 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -64,13 +68,17 @@
 		656D334C1FE1212E00787069 /* KmongUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KmongUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		656D33501FE1212E00787069 /* KmongUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KmongUITests.swift; sourceTree = "<group>"; };
 		656D33521FE1212E00787069 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		657085921FE431B500969621 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
+		657085941FE4326C00969621 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		6570B1681FE176DD00CE09DB /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		6587ECCD1FE1247900A617EF /* Kmong-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Kmong-Bridging-Header.h"; sourceTree = "<group>"; };
 		6587ECCE1FE1247A00A617EF /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		6587ECCF1FE1247A00A617EF /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
-		6587ECD11FE1250500A617EF /* mainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainVC.swift; sourceTree = "<group>"; };
+		6587ECD11FE1250500A617EF /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		65AD43E51FE434A1006388FA /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
+		65AD43E71FE43597006388FA /* HomeItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeItemCell.swift; sourceTree = "<group>"; };
+		65AD43E91FE435B0006388FA /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		65C507A41FE2DC3600A30675 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
-		65C507AA1FE2E27800A30675 /* SubCategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoryVC.swift; sourceTree = "<group>"; };
 		7597819708E7A6237E2DA9DB /* Pods-KmongUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KmongUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KmongUITests/Pods-KmongUITests.release.xcconfig"; sourceTree = "<group>"; };
 		89698210BCCCDE84727F123E /* Pods-KmongTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KmongTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KmongTests/Pods-KmongTests.debug.xcconfig"; sourceTree = "<group>"; };
 		94D4EE780A97CD0EAC6C925E /* Pods-Kmong.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kmong.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kmong/Pods-Kmong.debug.xcconfig"; sourceTree = "<group>"; };
@@ -112,7 +120,7 @@
 		653394E31FE17933004F8EE3 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				653394E41FE17951004F8EE3 /* dataService.swift */,
+				653394E41FE17951004F8EE3 /* DataService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -177,10 +185,10 @@
 		656D335E1FE1213700787069 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				6587ECD11FE1250500A617EF /* mainVC.swift */,
-				651E648C1FE1911C004F55BC /* HomeVC.swift */,
+				6587ECD11FE1250500A617EF /* MainVC.swift */,
+				651E648C1FE1911C004F55BC /* SubMainVC.swift */,
+				657085941FE4326C00969621 /* HomeVC.swift */,
 				651D21231FE1AE7B000FD273 /* CategoryVC.swift */,
-				65C507AA1FE2E27800A30675 /* SubCategoryVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -189,8 +197,11 @@
 			isa = PBXGroup;
 			children = (
 				6570B1681FE176DD00CE09DB /* RoundedButton.swift */,
-				651D21251FE1AF6F000FD273 /* CategoryCell.swift */,
 				65C507A41FE2DC3600A30675 /* CircleImage.swift */,
+				657085921FE431B500969621 /* BackButton.swift */,
+				651D21251FE1AF6F000FD273 /* CategoryCell.swift */,
+				65AD43E51FE434A1006388FA /* HomeCell.swift */,
+				65AD43E71FE43597006388FA /* HomeItemCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -198,7 +209,8 @@
 		656D33601FE1214C00787069 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				653394E61FE179CD004F8EE3 /* PageCategory.swift */,
+				653394E61FE179CD004F8EE3 /* Category.swift */,
+				65AD43E91FE435B0006388FA /* Item.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -518,16 +530,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				651E648D1FE1911C004F55BC /* HomeVC.swift in Sources */,
-				653394E71FE179CD004F8EE3 /* PageCategory.swift in Sources */,
+				651E648D1FE1911C004F55BC /* SubMainVC.swift in Sources */,
+				653394E71FE179CD004F8EE3 /* Category.swift in Sources */,
+				657085931FE431B500969621 /* BackButton.swift in Sources */,
 				651D21241FE1AE7B000FD273 /* CategoryVC.swift in Sources */,
-				653394E51FE17951004F8EE3 /* dataService.swift in Sources */,
+				653394E51FE17951004F8EE3 /* DataService.swift in Sources */,
 				656D33311FE1212E00787069 /* AppDelegate.swift in Sources */,
-				65C507AB1FE2E27800A30675 /* SubCategoryVC.swift in Sources */,
+				65AD43E61FE434A1006388FA /* HomeCell.swift in Sources */,
 				651D21261FE1AF6F000FD273 /* CategoryCell.swift in Sources */,
 				6570B1691FE176DD00CE09DB /* RoundedButton.swift in Sources */,
 				6587ECD01FE1247A00A617EF /* SWRevealViewController.m in Sources */,
-				6587ECD21FE1250500A617EF /* mainVC.swift in Sources */,
+				65AD43EA1FE435B0006388FA /* Item.swift in Sources */,
+				657085951FE4326C00969621 /* HomeVC.swift in Sources */,
+				65AD43E81FE43597006388FA /* HomeItemCell.swift in Sources */,
+				6587ECD21FE1250500A617EF /* MainVC.swift in Sources */,
 				65C507A51FE2DC3600A30675 /* CircleImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

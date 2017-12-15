@@ -2,70 +2,59 @@
 //  HomeVC.swift
 //  Kmong
 //
-//  Created by Eunseok on 2017. 12. 14..
+//  Created by Eunseok on 2017. 12. 16..
 //  Copyright © 2017년 Eunseok. All rights reserved.
 //
 
 import UIKit
 
-class HomeVC: UIViewController {
+class HomeVC: UIViewController{
 
-   
-    @IBOutlet var tabs: [UIButton]!
+    @IBOutlet weak var scroll: UIScrollView!
     
-  
-    @IBOutlet weak var contentView: UIView!
-    var hmVC: UIViewController!
-    var categoryVC: UIViewController!
-    var messageVC: UIViewController!
-    var alertVC: UIViewController!
-    var menuVC: UIViewController!
+    @IBOutlet weak var homeTableView: UIView!
+    @IBOutlet weak var homeUrlView: UIView!
+    @IBOutlet weak var homeCollectionView: UIView!
+    @IBOutlet weak var homePageView: UIView!
+
+    
+    var pageVC: UIViewController!
+    var collectionVC: UIViewController!
+    var urlVC: UIViewController!
+    var tableVC: UIViewController!
     
     var viewControllers: [UIViewController]!
+    var uiViews : [UIView]!
     
     var index: Int = 0
     override func viewWillAppear(_ animated: Bool) {
-       
+        
         
     }
     override func viewDidLoad() {
+        scroll.showsVerticalScrollIndicator = false
         super.viewDidLoad()
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-  
-        hmVC = storyboard.instantiateViewController(withIdentifier: "Home")
-        categoryVC = storyboard.instantiateViewController(withIdentifier: "Category")
-        messageVC = storyboard.instantiateViewController(withIdentifier: "Message")
-        alertVC = storyboard.instantiateViewController(withIdentifier: "Alert")
-        menuVC = storyboard.instantiateViewController(withIdentifier: "Menu")
         
-        viewControllers = [hmVC, categoryVC, messageVC, alertVC, menuVC]
+        pageVC = storyboard.instantiateViewController(withIdentifier: "HomePageView")
+        collectionVC = storyboard.instantiateViewController(withIdentifier: "HomeCollectionView")
+        urlVC = storyboard.instantiateViewController(withIdentifier: "HomeUrlView")
+        tableVC = storyboard.instantiateViewController(withIdentifier: "HomeTableView")
+       
         
-        tabs[index].isSelected = true
-        tabPressed(tabs[index])
-    }
-    
-    @IBAction func tabPressed(_ sender: UIButton) {
-        let previouseIndex = index
-        index = sender.tag
+        viewControllers = [pageVC, collectionVC, urlVC, tableVC]
+        uiViews = [homePageView, homeCollectionView, homeUrlView, homeTableView]
         
-        tabs[previouseIndex].isSelected = false
-        let previousVC = viewControllers[previouseIndex]
+        for index in 0...3{
+            let vc = viewControllers[index]
+            
+            addChildViewController(vc)
+            vc.view.frame = uiViews[index].bounds
+            uiViews[index].addSubview(vc.view)
+            vc.didMove(toParentViewController: self)
+        }
         
-        previousVC.willMove(toParentViewController: nil)
-        previousVC.view.removeFromSuperview()
-        previousVC.removeFromParentViewController()
-        
-        sender.isSelected = true
-        let vc = viewControllers[index]
-
-        addChildViewController(vc)
-        vc.view.frame = contentView.bounds
-        contentView.addSubview(vc.view)
-        vc.didMove(toParentViewController: self)
         
     }
-
-    
-
 }

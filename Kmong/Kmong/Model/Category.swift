@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct PageCategory{
+struct Category{
     
     public var title: String
     public var imageName: String
