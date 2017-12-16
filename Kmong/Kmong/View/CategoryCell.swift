@@ -16,7 +16,6 @@ class CategoryCell: UITableViewCell {
     func updateView(category: Category){
         categoryImg.image = UIImage(named: category.imageName)
         categoryLbl.text = category.title
-        
     }
 
 }
