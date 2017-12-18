@@ -27,11 +27,11 @@ class DataService {
     ]
     
     private let items = [
-        Item(title: "C 기본교육", imageName: "icons8-comedy-2-filled-100", price: "10000", rating: "3"),
-        Item(title: "Java 기본교육", imageName: "icons8-comedy-2-filled-100", price: "35000", rating: "2"),
-        Item(title: "Swift 기본교육", imageName: "icons8-comedy-2-filled-100", price: "40000", rating: "4"),
-        Item(title: "C++ 기본교육", imageName: "icons8-comedy-2-filled-100", price: "20000", rating: "1"),
-        Item(title: "Unity3D Gaming  기본교육", imageName: "icons8-comedy-2-filled-100", price: "50000", rating: "5")
+        Item(title: "C 기본교육", imageName: "icons8-comedy-2-filled-100", price: "10000", rating: "3", userName: "CodingByEunsek"),
+        Item(title: "Java 기본교육", imageName: "icons8-comedy-2-filled-100", price: "35000", rating: "2", userName: "CodingByEunsek"),
+        Item(title: "Swift 기본교육", imageName: "icons8-comedy-2-filled-100", price: "40000", rating: "4", userName: "CodingByEunsek"),
+        Item(title: "C++ 기본교육", imageName: "icons8-comedy-2-filled-100", price: "20000", rating: "1", userName: "CodingByEunsek"),
+        Item(title: "Unity3D Gaming  기본교육", imageName: "icons8-comedy-2-filled-100", price: "50000", rating: "5", userName: "CodingByEunsek")
     ]
     
     private let values = [

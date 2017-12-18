@@ -8,42 +8,51 @@
 
 import UIKit
 
-class HomeVC: UIViewController{
+class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
 
-    @IBOutlet weak var scroll: UIScrollView!
-    
-    @IBOutlet weak var homeTableView: UIView!
-    @IBOutlet weak var homeUrlView: UIView!
     @IBOutlet weak var homeCollectionView: UIView!
     @IBOutlet weak var homePageView: UIView!
-
+    @IBOutlet weak var homeUrlView: UIView!
+    @IBOutlet weak var tableView: UITableView!
+    
     
     var pageVC: UIViewController!
     var collectionVC: UIViewController!
     var urlVC: UIViewController!
-    var tableVC: UIViewController!
     
     var viewControllers: [UIViewController]!
     var uiViews : [UIView]!
     
     var index: Int = 0
-
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return DataService.instance.getItems().count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "items") as? ItemCell{
+            let item = DataService.instance.getItems()[indexPath.row]
+            cell.updateView(item: item)
+            return cell
+        }else{
+            return CategoryCell()
+        }
+    }
+    
     override func viewDidLoad() {
-        scroll.showsVerticalScrollIndicator = false
         super.viewDidLoad()
-        
+        tableView.dataSource = self
+        tableView.delegate = self
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         pageVC = storyboard.instantiateViewController(withIdentifier: "HomePageView")
         collectionVC = storyboard.instantiateViewController(withIdentifier: "HomeCollectionView")
         urlVC = storyboard.instantiateViewController(withIdentifier: "HomeUrlView")
-        tableVC = storyboard.instantiateViewController(withIdentifier: "HomeTableView")
        
         
-        viewControllers = [pageVC, collectionVC, urlVC, tableVC]
-        uiViews = [homePageView, homeCollectionView, homeUrlView, homeTableView]
+        viewControllers = [pageVC, collectionVC, urlVC]
+        uiViews = [homePageView, homeCollectionView, homeUrlView]
         
-        for index in 0...3{
+        for index in 0...2{
             let vc = viewControllers[index]
             addChildViewController(vc)
             vc.view.frame = uiViews[index].bounds

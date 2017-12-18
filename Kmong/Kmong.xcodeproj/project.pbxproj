@@ -23,7 +23,6 @@
 		657085931FE431B500969621 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657085921FE431B500969621 /* BackButton.swift */; };
 		657085951FE4326C00969621 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657085941FE4326C00969621 /* HomeVC.swift */; };
 		6570B1691FE176DD00CE09DB /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6570B1681FE176DD00CE09DB /* RoundedButton.swift */; };
-		6587ECD01FE1247A00A617EF /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6587ECCE1FE1247A00A617EF /* SWRevealViewController.m */; };
 		6587ECD21FE1250500A617EF /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587ECD11FE1250500A617EF /* MainVC.swift */; };
 		65AD43EA1FE435B0006388FA /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AD43E91FE435B0006388FA /* Item.swift */; };
 		65AD43F71FE50F20006388FA /* HomePageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AD43F61FE50F20006388FA /* HomePageVC.swift */; };
@@ -34,6 +33,8 @@
 		65AD44091FE7C9B6006388FA /* HomeUrlVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AD44081FE7C9B6006388FA /* HomeUrlVC.swift */; };
 		65AD440B1FE80B65006388FA /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 65AD440A1FE80B65006388FA /* video.mp4 */; };
 		65AD44141FE81A3F006388FA /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AD44131FE81A3F006388FA /* VideoView.swift */; };
+		65AD44161FE84C8D006388FA /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AD44151FE84C8D006388FA /* ItemCell.swift */; };
+		65AD44181FE84CCA006388FA /* HomeItemsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AD44171FE84CCA006388FA /* HomeItemsVC.swift */; };
 		65C507A51FE2DC3600A30675 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C507A41FE2DC3600A30675 /* CircleImage.swift */; };
 		6AA5C2598081FBA5B53D0916 /* Pods_Kmong.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B34C4E3ABD35BEB6851479F7 /* Pods_Kmong.framework */; };
 /* End PBXBuildFile section */
@@ -77,9 +78,6 @@
 		657085921FE431B500969621 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		657085941FE4326C00969621 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		6570B1681FE176DD00CE09DB /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
-		6587ECCD1FE1247900A617EF /* Kmong-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Kmong-Bridging-Header.h"; sourceTree = "<group>"; };
-		6587ECCE1FE1247A00A617EF /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
-		6587ECCF1FE1247A00A617EF /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		6587ECD11FE1250500A617EF /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		65AD43E91FE435B0006388FA /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		65AD43F61FE50F20006388FA /* HomePageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageVC.swift; sourceTree = "<group>"; };
@@ -90,6 +88,8 @@
 		65AD44081FE7C9B6006388FA /* HomeUrlVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUrlVC.swift; sourceTree = "<group>"; };
 		65AD440A1FE80B65006388FA /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
 		65AD44131FE81A3F006388FA /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
+		65AD44151FE84C8D006388FA /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		65AD44171FE84CCA006388FA /* HomeItemsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeItemsVC.swift; sourceTree = "<group>"; };
 		65C507A41FE2DC3600A30675 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		7597819708E7A6237E2DA9DB /* Pods-KmongUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KmongUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KmongUITests/Pods-KmongUITests.release.xcconfig"; sourceTree = "<group>"; };
 		89698210BCCCDE84727F123E /* Pods-KmongTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KmongTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KmongTests/Pods-KmongTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -163,7 +163,6 @@
 			isa = PBXGroup;
 			children = (
 				65AD440A1FE80B65006388FA /* video.mp4 */,
-				6587ECCC1FE1246600A617EF /* Supporting Files */,
 				653394E31FE17933004F8EE3 /* Service */,
 				656D33601FE1214C00787069 /* Model */,
 				656D335F1FE1214800787069 /* View */,
@@ -216,6 +215,7 @@
 				65AD44041FE6439C006388FA /* CategoryCollectionCell.swift */,
 				65AD43F81FE511BD006388FA /* PageView.swift */,
 				65AD44131FE81A3F006388FA /* VideoView.swift */,
+				65AD44151FE84C8D006388FA /* ItemCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -230,16 +230,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		6587ECCC1FE1246600A617EF /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				6587ECCF1FE1247A00A617EF /* SWRevealViewController.h */,
-				6587ECCE1FE1247A00A617EF /* SWRevealViewController.m */,
-				6587ECCD1FE1247900A617EF /* Kmong-Bridging-Header.h */,
-			);
-			path = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		65AD43EB1FE454C6006388FA /* SubController */ = {
 			isa = PBXGroup;
 			children = (
@@ -247,6 +237,7 @@
 				65AD43F61FE50F20006388FA /* HomePageVC.swift */,
 				65AD44001FE64239006388FA /* HomeCollectionVC.swift */,
 				65AD44081FE7C9B6006388FA /* HomeUrlVC.swift */,
+				65AD44171FE84CCA006388FA /* HomeItemsVC.swift */,
 			);
 			path = SubController;
 			sourceTree = "<group>";
@@ -568,9 +559,10 @@
 				653394E51FE17951004F8EE3 /* DataService.swift in Sources */,
 				65AD44011FE64239006388FA /* HomeCollectionVC.swift in Sources */,
 				656D33311FE1212E00787069 /* AppDelegate.swift in Sources */,
+				65AD44161FE84C8D006388FA /* ItemCell.swift in Sources */,
 				651D21261FE1AF6F000FD273 /* CategoryCell.swift in Sources */,
 				6570B1691FE176DD00CE09DB /* RoundedButton.swift in Sources */,
-				6587ECD01FE1247A00A617EF /* SWRevealViewController.m in Sources */,
+				65AD44181FE84CCA006388FA /* HomeItemsVC.swift in Sources */,
 				65AD43EA1FE435B0006388FA /* Item.swift in Sources */,
 				657085951FE4326C00969621 /* HomeVC.swift in Sources */,
 				65AD44141FE81A3F006388FA /* VideoView.swift in Sources */,
