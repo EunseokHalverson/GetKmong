@@ -11,17 +11,16 @@ import UIKit
 class HomePageVC: UIPageViewController, UIPageViewControllerDataSource, UIScrollViewDelegate{
     
     private var pageViewController: UIPageViewController?
-    var pageControl: UIPageControl = UIPageControl(frame: CGRect(x: 10, y: 20, width: 50, height: 30))
     
+    var pageControl: UIPageControl = UIPageControl(frame: CGRect(x: 20, y: 20, width: 50, height: 30))
     
-    private let contentImages = ["icons8-comedy-2-filled-100", "images", "back","back"]
     
     func configurePageControl() {
-        self.pageControl.numberOfPages = contentImages.count
+        self.pageControl.numberOfPages = DataService.instance.getValues().count
         self.pageControl.currentPage = 0
         self.pageControl.tintColor = UIColor.red
-        self.pageControl.pageIndicatorTintColor = UIColor.black
-        self.pageControl.currentPageIndicatorTintColor = UIColor.green
+        self.pageControl.pageIndicatorTintColor = #colorLiteral(red: 0.9399758577, green: 0.9343879819, blue: 0.9442710876, alpha: 0.7223351884)
+        self.pageControl.currentPageIndicatorTintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         self.view.addSubview(pageControl)
     }
     
@@ -29,19 +28,15 @@ class HomePageVC: UIPageViewController, UIPageViewControllerDataSource, UIScroll
         super.viewDidLoad()
         createPageViewController()
         configurePageControl()
-//        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.autoUpdate), userInfo: nil, repeats: true)
     }
     
-    override func setViewControllers(_ viewControllers: [UIViewController]?, direction: UIPageViewControllerNavigationDirection, animated: Bool, completion: ((Bool) -> Void)? = nil) {
-        print("2")
-    }
     private func createPageViewController() {
         
         let pageController = self.storyboard!.instantiateViewController(withIdentifier: "PageController") as! UIPageViewController
         
         pageController.dataSource = self
         
-        if contentImages.count > 0 {
+        if DataService.instance.getValues().count > 0 {
             let firstController = getItemController(itemIndex: 0)!
             let startingViewControllers = [firstController]
             pageController.setViewControllers(startingViewControllers, direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
@@ -69,7 +64,7 @@ class HomePageVC: UIPageViewController, UIPageViewControllerDataSource, UIScroll
         
         let itemController = viewController as! PageView
         pageControl.currentPage = itemController.itemIndex
-        if itemController.itemIndex+1 < contentImages.count {
+        if itemController.itemIndex+1 < DataService.instance.getValues().count {
             
             return getItemController(itemIndex: itemController.itemIndex+1)
         }
@@ -79,10 +74,11 @@ class HomePageVC: UIPageViewController, UIPageViewControllerDataSource, UIScroll
     
     private func getItemController(itemIndex: Int) -> PageView? {
         
-        if itemIndex < contentImages.count {
+        if itemIndex < DataService.instance.getValues().count {
             let pageItemController = self.storyboard!.instantiateViewController(withIdentifier: "PageView") as! PageView
             pageItemController.itemIndex = itemIndex
-            pageItemController.imageName = contentImages[itemIndex]
+            pageItemController.imageName = DataService.instance.getValues()[itemIndex].imageName
+            pageItemController.lblText = DataService.instance.getValues()[itemIndex].title
             return pageItemController
         }
         
@@ -90,7 +86,7 @@ class HomePageVC: UIPageViewController, UIPageViewControllerDataSource, UIScroll
     }
     
     func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
-        return contentImages.count
+        return DataService.instance.getValues().count
     }
     
     func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {

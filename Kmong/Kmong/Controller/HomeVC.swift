@@ -27,10 +27,7 @@ class HomeVC: UIViewController{
     var uiViews : [UIView]!
     
     var index: Int = 0
-    override func viewWillAppear(_ animated: Bool) {
-        
-        
-    }
+
     override func viewDidLoad() {
         scroll.showsVerticalScrollIndicator = false
         super.viewDidLoad()
@@ -48,7 +45,6 @@ class HomeVC: UIViewController{
         
         for index in 0...3{
             let vc = viewControllers[index]
-            
             addChildViewController(vc)
             vc.view.frame = uiViews[index].bounds
             uiViews[index].addSubview(vc.view)
