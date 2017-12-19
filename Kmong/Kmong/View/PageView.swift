@@ -23,10 +23,12 @@ class PageView: UIViewController {
             }
         }
     }
+    
     var lblText: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         pageImg.image = UIImage(named: imageName)
         pageLbl.text = lblText
     }

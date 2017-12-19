@@ -8,14 +8,22 @@
 
 import UIKit
 
-class HomePageVC: UIPageViewController, UIPageViewControllerDataSource, UIScrollViewDelegate{
+class HomePageVC: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate{
     
     private var pageViewController: UIPageViewController?
+    var pendingIndex: Int?
+    var tempIndex: Int?
     
     var pageControl: UIPageControl = UIPageControl(frame: CGRect(x: 20, y: 20, width: 50, height: 30))
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        createPageViewController()
+        configurePageControl()
+    }
     
     func configurePageControl() {
+        pendingIndex = 0
         self.pageControl.numberOfPages = DataService.instance.getValues().count
         self.pageControl.currentPage = 0
         self.pageControl.tintColor = UIColor.red
@@ -24,17 +32,12 @@ class HomePageVC: UIPageViewController, UIPageViewControllerDataSource, UIScroll
         self.view.addSubview(pageControl)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        createPageViewController()
-        configurePageControl()
-    }
-    
     private func createPageViewController() {
         
         let pageController = self.storyboard!.instantiateViewController(withIdentifier: "PageController") as! UIPageViewController
         
         pageController.dataSource = self
+        pageController.delegate = self
         
         if DataService.instance.getValues().count > 0 {
             let firstController = getItemController(itemIndex: 0)!
@@ -52,7 +55,7 @@ class HomePageVC: UIPageViewController, UIPageViewControllerDataSource, UIScroll
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         
         let itemController = viewController as! PageView
-        pageControl.currentPage = itemController.itemIndex
+        self.pageControl.currentPage = itemController.itemIndex
         if itemController.itemIndex > 0 {
             return getItemController(itemIndex: itemController.itemIndex-1)
         }
@@ -63,7 +66,7 @@ class HomePageVC: UIPageViewController, UIPageViewControllerDataSource, UIScroll
     @objc func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
         let itemController = viewController as! PageView
-        pageControl.currentPage = itemController.itemIndex
+        self.pageControl.currentPage = itemController.itemIndex
         if itemController.itemIndex+1 < DataService.instance.getValues().count {
             
             return getItemController(itemIndex: itemController.itemIndex+1)
@@ -76,6 +79,7 @@ class HomePageVC: UIPageViewController, UIPageViewControllerDataSource, UIScroll
         
         if itemIndex < DataService.instance.getValues().count {
             let pageItemController = self.storyboard!.instantiateViewController(withIdentifier: "PageView") as! PageView
+            tempIndex = itemIndex
             pageItemController.itemIndex = itemIndex
             pageItemController.imageName = DataService.instance.getValues()[itemIndex].imageName
             pageItemController.lblText = DataService.instance.getValues()[itemIndex].title
@@ -85,6 +89,17 @@ class HomePageVC: UIPageViewController, UIPageViewControllerDataSource, UIScroll
         return nil
     }
     
+    func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
+        pendingIndex = tempIndex
+    }
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        if completed {
+            let currentIndex = pendingIndex
+            if let index = currentIndex {
+                self.pageControl.currentPage = index
+            }
+        }
+    }
     func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
         return DataService.instance.getValues().count
     }
