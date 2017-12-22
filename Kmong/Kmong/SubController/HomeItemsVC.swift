@@ -29,9 +29,21 @@ class HomeItemsVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
             cell.updateView(item: item)
             return cell
         }else{
-            return CategoryCell()
+            return ItemCell()
         }
     }
     
-    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let headerCell = tableView.dequeueReusableCell(withIdentifier: "items") as! ItemCell
+        headerCell.textLabel?.text = "ASDASD"
+        
+        
+        return headerCell
+    }
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "ASDSD"
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 100  }
 }
