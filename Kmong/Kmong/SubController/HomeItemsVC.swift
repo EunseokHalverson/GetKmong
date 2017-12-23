@@ -34,16 +34,17 @@ class HomeItemsVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        
-        let headerCell = tableView.dequeueReusableCell(withIdentifier: "items") as! ItemCell
-        headerCell.textLabel?.text = "ASDASD"
-        
-        
-        return headerCell
+        let view = UIView()
+        view.frame = CGRect(x: 5, y: 5, width: 35, height: 35)
+
+        return view
     }
+    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "ASDSD"
     }
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 100  }
+        return 45
+    }
 }
