@@ -17,6 +17,7 @@ class HomeItemsVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         super.viewDidLoad()
         itemTable.dataSource = self
         itemTable.delegate = self
+        itemTable.estimatedSectionHeaderHeight = 40
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -33,18 +34,21 @@ class HomeItemsVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         }
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = UIView()
-        view.frame = CGRect(x: 5, y: 5, width: 35, height: 35)
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 25))
+//        let label = UILabel(frame: CGRect(x: 20, y: 20, width: 50, height: 50))
+//        label.text = "TEST TEXT"
+//        print("YOLO")
+//        
+//        view.addSubview(view)
+//        
+//        return view
+//    }
+//    
+//    
+//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        return 20
+//    }
+//}
 
-        return view
-    }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "ASDSD"
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 45
-    }
 }

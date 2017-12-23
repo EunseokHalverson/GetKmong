@@ -62,4 +62,24 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         
         
     }
+    
+    func updateCollectionCell(identifier: String){
+        let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: identifier) as UIViewController
+        self.present(viewController, animated: false, completion: nil)
+    }
+    
+    @IBAction func toMyselfPressed(_ sender: Any) {
+        updateCollectionCell(identifier: "categoryToMyself")
+    }
+    @IBAction func educationPressed(_ sender: Any) {
+        updateCollectionCell(identifier: "categoryToEducation")
+    }
+
+    @IBAction func contactPressed(_ sender: Any) {
+        updateCollectionCell(identifier: "categoryToContact")
+    }
+    @IBAction func expPressed(_ sender: Any) {
+        updateCollectionCell(identifier: "categoryToExperience")
+    }
+    
 }

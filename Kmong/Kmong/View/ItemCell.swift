@@ -22,5 +22,5 @@ class ItemCell: UITableViewCell {
         itemRating.text = item.rating
         itemPrice.text = item.price
     }
-
+    
 }
