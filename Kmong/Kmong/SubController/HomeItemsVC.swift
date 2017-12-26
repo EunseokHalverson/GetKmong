@@ -17,7 +17,6 @@ class HomeItemsVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         super.viewDidLoad()
         itemTable.dataSource = self
         itemTable.delegate = self
-        itemTable.estimatedSectionHeaderHeight = 40
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '07018B937978B5485DCA42B2783BD6DE'
-               BlueprintName = 'Pods-Kmong'
+               BlueprintIdentifier = '1DD5B44EDCDB6E4AAF0728C78E998868'
+               BlueprintName = 'RatingBar-iOS'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Pods-Kmong.framework'>
+               BuildableName = 'RatingBar-iOS.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

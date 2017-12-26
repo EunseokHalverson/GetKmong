@@ -32,6 +32,7 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         if let cell = tableView.dequeueReusableCell(withIdentifier: "items") as? ItemCell{
             let item = DataService.instance.getItems()[indexPath.row]
             cell.updateView(item: item)
+ 
             return cell
         }else{
             return CategoryCell()
