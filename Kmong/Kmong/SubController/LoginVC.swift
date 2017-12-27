@@ -25,13 +25,13 @@ class LoginVC: UIViewController {
     @IBAction func loginBtnPressed(_ sender: Any) {
         
         if let email = emailLabel.text, let pass = passwordLabel.text{
-            Auth.auth().signIn(withEmail: email, password: pass, completion: { (user, error) in
+            Auth.auth().signIn(withEmail: email, password: pass){ (user, error) in
                 if let u = user{
                     
                 }else{
                     
                 }
-            })
+            }
         }
     }
     

@@ -11,6 +11,7 @@ import UIKit
 class AccountVC: UIViewController {
 
     @IBOutlet weak var username: UILabel!
+    @IBAction func prepareForUnwind(segue: UIStoryboardSegue){}
     
     override func viewDidLoad() {
         super.viewDidLoad()
