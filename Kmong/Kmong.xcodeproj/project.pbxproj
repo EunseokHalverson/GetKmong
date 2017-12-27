@@ -11,6 +11,13 @@
 		5992C7A029B8BAEB904D15C6 /* Pods_KmongTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F78CA27EC5AE6A99A76F9E65 /* Pods_KmongTests.framework */; };
 		651D21241FE1AE7B000FD273 /* CategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651D21231FE1AE7B000FD273 /* CategoryVC.swift */; };
 		651D21261FE1AF6F000FD273 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651D21251FE1AF6F000FD273 /* CategoryCell.swift */; };
+		651E0F631FF3C4F9005E51FB /* AccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651E0F621FF3C4F9005E51FB /* AccountVC.swift */; };
+		651E0F651FF3C509005E51FB /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651E0F641FF3C508005E51FB /* LoginVC.swift */; };
+		651E0F671FF3C51C005E51FB /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651E0F661FF3C51C005E51FB /* CreateAccountVC.swift */; };
+		651E0F691FF3C948005E51FB /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651E0F681FF3C948005E51FB /* AuthService.swift */; };
+		651E0F6B1FF406E2005E51FB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 651E0F6A1FF406E1005E51FB /* GoogleService-Info.plist */; };
+		651E0F6D1FF4105A005E51FB /* MessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651E0F6C1FF4105A005E51FB /* MessageVC.swift */; };
+		651E0F6F1FF4106A005E51FB /* SendMessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651E0F6E1FF4106A005E51FB /* SendMessageVC.swift */; };
 		651E648D1FE1911C004F55BC /* SubMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651E648C1FE1911C004F55BC /* SubMainVC.swift */; };
 		653394E51FE17951004F8EE3 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653394E41FE17951004F8EE3 /* DataService.swift */; };
 		653394E71FE179CD004F8EE3 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653394E61FE179CD004F8EE3 /* Category.swift */; };
@@ -60,6 +67,13 @@
 		0D1FC797DB0DA5A89B38A831 /* Pods-KmongTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KmongTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KmongTests/Pods-KmongTests.release.xcconfig"; sourceTree = "<group>"; };
 		651D21231FE1AE7B000FD273 /* CategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryVC.swift; sourceTree = "<group>"; };
 		651D21251FE1AF6F000FD273 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		651E0F621FF3C4F9005E51FB /* AccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVC.swift; sourceTree = "<group>"; };
+		651E0F641FF3C508005E51FB /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		651E0F661FF3C51C005E51FB /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
+		651E0F681FF3C948005E51FB /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		651E0F6A1FF406E1005E51FB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		651E0F6C1FF4105A005E51FB /* MessageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageVC.swift; sourceTree = "<group>"; };
+		651E0F6E1FF4106A005E51FB /* SendMessageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessageVC.swift; sourceTree = "<group>"; };
 		651E648C1FE1911C004F55BC /* SubMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubMainVC.swift; sourceTree = "<group>"; };
 		653394E41FE17951004F8EE3 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		653394E61FE179CD004F8EE3 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -133,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				653394E41FE17951004F8EE3 /* DataService.swift */,
+				651E0F681FF3C948005E51FB /* AuthService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -169,6 +184,7 @@
 				65AD43EB1FE454C6006388FA /* SubController */,
 				656D335E1FE1213700787069 /* Controller */,
 				656D33301FE1212E00787069 /* AppDelegate.swift */,
+				651E0F6A1FF406E1005E51FB /* GoogleService-Info.plist */,
 				656D33341FE1212E00787069 /* Main.storyboard */,
 				656D33371FE1212E00787069 /* Assets.xcassets */,
 				656D33391FE1212E00787069 /* LaunchScreen.storyboard */,
@@ -201,6 +217,8 @@
 				6587ECD11FE1250500A617EF /* MainVC.swift */,
 				657085941FE4326C00969621 /* HomeVC.swift */,
 				651D21231FE1AE7B000FD273 /* CategoryVC.swift */,
+				651E0F621FF3C4F9005E51FB /* AccountVC.swift */,
+				651E0F6C1FF4105A005E51FB /* MessageVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -238,6 +256,9 @@
 				65AD44001FE64239006388FA /* HomeCollectionVC.swift */,
 				65AD44081FE7C9B6006388FA /* HomeUrlVC.swift */,
 				65AD44171FE84CCA006388FA /* HomeItemsVC.swift */,
+				651E0F641FF3C508005E51FB /* LoginVC.swift */,
+				651E0F661FF3C51C005E51FB /* CreateAccountVC.swift */,
+				651E0F6E1FF4106A005E51FB /* SendMessageVC.swift */,
 			);
 			path = SubController;
 			sourceTree = "<group>";
@@ -384,6 +405,7 @@
 			files = (
 				656D333B1FE1212E00787069 /* LaunchScreen.storyboard in Resources */,
 				65AD440B1FE80B65006388FA /* video.mp4 in Resources */,
+				651E0F6B1FF406E2005E51FB /* GoogleService-Info.plist in Resources */,
 				656D33381FE1212E00787069 /* Assets.xcassets in Resources */,
 				656D33361FE1212E00787069 /* Main.storyboard in Resources */,
 			);
@@ -548,11 +570,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				651E0F631FF3C4F9005E51FB /* AccountVC.swift in Sources */,
 				65AD43FF1FE62AAB006388FA /* Value.swift in Sources */,
+				651E0F671FF3C51C005E51FB /* CreateAccountVC.swift in Sources */,
 				651E648D1FE1911C004F55BC /* SubMainVC.swift in Sources */,
+				651E0F6D1FF4105A005E51FB /* MessageVC.swift in Sources */,
 				65AD44051FE6439C006388FA /* CategoryCollectionCell.swift in Sources */,
 				65AD44091FE7C9B6006388FA /* HomeUrlVC.swift in Sources */,
 				653394E71FE179CD004F8EE3 /* Category.swift in Sources */,
+				651E0F691FF3C948005E51FB /* AuthService.swift in Sources */,
 				657085931FE431B500969621 /* BackButton.swift in Sources */,
 				651D21241FE1AE7B000FD273 /* CategoryVC.swift in Sources */,
 				65AD43F71FE50F20006388FA /* HomePageVC.swift in Sources */,
@@ -566,9 +592,11 @@
 				65AD43EA1FE435B0006388FA /* Item.swift in Sources */,
 				657085951FE4326C00969621 /* HomeVC.swift in Sources */,
 				65AD44141FE81A3F006388FA /* VideoView.swift in Sources */,
+				651E0F6F1FF4106A005E51FB /* SendMessageVC.swift in Sources */,
 				6587ECD21FE1250500A617EF /* MainVC.swift in Sources */,
 				65AD43F91FE511BD006388FA /* PageView.swift in Sources */,
 				65C507A51FE2DC3600A30675 /* CircleImage.swift in Sources */,
+				651E0F651FF3C509005E51FB /* LoginVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
