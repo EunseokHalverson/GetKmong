@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyStarRatingView
 
 class ItemCell: UITableViewCell {
     @IBOutlet weak var itemImg: UIImageView!
@@ -14,13 +15,26 @@ class ItemCell: UITableViewCell {
     @IBOutlet weak var itemUserName: UILabel!
     @IBOutlet weak var itemRating: UILabel!
     @IBOutlet weak var views: UIView!
+    @IBOutlet weak var ratingBarView: UIView!
+    
+    @IBOutlet weak var ratingBar: UIView!
+    
+    
     
     func updateView(item: Item){
         itemImg.image = UIImage(named: item.imageName)
         itemLbl.text = item.title
         itemUserName.text = item.userName
-        itemRating.text = item.rating
         views.layer.cornerRadius = 5
+        let starRatingView = SwiftyStarRatingView()
+        starRatingView.frame = ratingBar.bounds
+        starRatingView.allowsHalfStars = true
+        starRatingView.maximumValue = 5         //default is 5
+        starRatingView.minimumValue = 0         //default is 0
+        starRatingView.value = CGFloat(item.rating)               //default is 0
+        starRatingView.tintColor = #colorLiteral(red: 0.9837014079, green: 0.8553137183, blue: 0.3496560156, alpha: 1)
+        ratingBar.addSubview(starRatingView)
+
     }
     
 }

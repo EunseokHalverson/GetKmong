@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class HomePageVC: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate{
     
     private var pageViewController: UIPageViewController?

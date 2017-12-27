@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
 
     @IBOutlet weak var homeCollectionView: UIView!
@@ -15,7 +16,7 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
     @IBOutlet weak var homeUrlView: UIView!
     @IBOutlet weak var tableView: UITableView!
     
-    
+
     var pageVC: UIViewController!
     var collectionVC: UIViewController!
     var urlVC: UIViewController!
@@ -32,7 +33,7 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         if let cell = tableView.dequeueReusableCell(withIdentifier: "items") as? ItemCell{
             let item = DataService.instance.getItems()[indexPath.row]
             cell.updateView(item: item)
- 
+
             return cell
         }else{
             return CategoryCell()

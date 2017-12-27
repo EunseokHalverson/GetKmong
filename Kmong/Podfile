@@ -12,7 +12,7 @@ target 'Kmong' do
   pod 'Alamofire'
   pod 'SwiftyJSON'
   pod 'Socket.IO-Client-Swift'
-  pod 'RatingBar-iOS', '~> 0.0'
+  pod 'SwiftyStarRatingView', '~> 1.0'
   
   target 'KmongTests' do
     inherit! :search_paths

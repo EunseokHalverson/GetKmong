@@ -1,6 +1,0 @@
-framework module RatingBar_iOS {
-  umbrella header "RatingBar-iOS-umbrella.h"
-
-  export *
-  module * { export * }
-}

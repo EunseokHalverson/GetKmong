@@ -12,10 +12,10 @@ struct Item{
     
     public var title: String
     public var imageName: String
-    public var rating: String
+    public var rating: Double
     public var userName: String
     
-    init(title: String, imageName: String, rating: String, userName: String){
+    init(title: String, imageName: String, rating: Double, userName: String){
         self.title = title
         self.imageName = imageName
         self.rating = rating

@@ -10,8 +10,7 @@
 #endif
 #endif
 
-#import "RatingBar.h"
 
-FOUNDATION_EXPORT double RatingBar_iOSVersionNumber;
-FOUNDATION_EXPORT const unsigned char RatingBar_iOSVersionString[];
+FOUNDATION_EXPORT double SwiftyStarRatingViewVersionNumber;
+FOUNDATION_EXPORT const unsigned char SwiftyStarRatingViewVersionString[];
 
