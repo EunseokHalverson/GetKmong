@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'CA14251F23CE44B721DC3A788F0AA88B'
-               BlueprintName = 'Pods-Kmong'
+               BlueprintIdentifier = '8159F94E49D9B443DE18F0F8B38078B8'
+               BlueprintName = 'GoogleToolboxForMac-f0850809'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Pods-Kmong.framework'>
+               BuildableName = 'GoogleToolboxForMac-f0850809.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

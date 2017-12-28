@@ -9,9 +9,6 @@ target 'Kmong' do
 
   # Pods for Kmong
   
-  pod 'Alamofire'
-  pod 'SwiftyJSON'
-  pod 'Socket.IO-Client-Swift'
   pod 'SwiftyStarRatingView', '~> 1.0'
   pod 'Firebase/Core'
   pod 'Firebase/Database'
@@ -19,6 +16,7 @@ target 'Kmong' do
   
   target 'KmongTests' do
     inherit! :search_paths
+    pod 'Firebase'
     # Pods for testing
   end
 

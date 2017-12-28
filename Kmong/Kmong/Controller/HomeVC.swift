@@ -10,7 +10,7 @@ import UIKit
 
 
 class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
-
+    
     @IBOutlet weak var homeCollectionView: UIView!
     @IBOutlet weak var homePageView: UIView!
     @IBOutlet weak var homeUrlView: UIView!

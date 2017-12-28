@@ -1,5 +1,6 @@
 PODS:
-  - Alamofire (4.6.0)
+  - Firebase (4.7.0):
+    - Firebase/Core (= 4.7.0)
   - Firebase/Auth (4.7.0):
     - Firebase/Core
     - FirebaseAuth (= 4.4.0)
@@ -42,23 +43,16 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
-  - Socket.IO-Client-Swift (13.1.0):
-    - Starscream (~> 3.0.2)
-  - Starscream (3.0.2)
-  - SwiftyJSON (4.0.0)
   - SwiftyStarRatingView (1.0.4)
 
 DEPENDENCIES:
-  - Alamofire
+  - Firebase
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
-  - Socket.IO-Client-Swift
-  - SwiftyJSON
   - SwiftyStarRatingView (~> 1.0)
 
 SPEC CHECKSUMS:
-  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
   Firebase: dbfb98ccec2dcfcd21ab9cc1b4981a3f3c8c5e26
   FirebaseAnalytics: 5b02a63ead2c3f0259cfc7f15e053e440587ecf8
   FirebaseAuth: cdeee95b528958dbb7dcf220ad0fb804d3a284b0
@@ -69,11 +63,8 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: ebaa1f79a5366922c1735f1566901f50beba23b7
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
-  Socket.IO-Client-Swift: b67a96d6a9e5f271bceb93e99779d2cf77c74868
-  Starscream: b512c62f6706421221b5ceb2ba01a9f58aca5bea
-  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   SwiftyStarRatingView: a2b0057700e0adeb8e7442c55d99cb53b531d2f4
 
-PODFILE CHECKSUM: 5822f4abb103d8eef0122fd225692316971c627f
+PODFILE CHECKSUM: 3f558e08da55ba8db6fd4a4e01dfacb609e44063
 
 COCOAPODS: 1.2.0

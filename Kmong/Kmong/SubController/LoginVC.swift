@@ -27,7 +27,7 @@ class LoginVC: UIViewController {
         if let email = emailLabel.text, let pass = passwordLabel.text{
             Auth.auth().signIn(withEmail: email, password: pass){ (user, error) in
                 if let u = user{
-                    
+                    self.performSegue(withIdentifier: "unwind", sender: self)
                 }else{
                     
                 }

@@ -17,7 +17,7 @@ class MessageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var postData = [String]()
     var ref: DatabaseReference?
     var databaseHandle: DatabaseHandle?
-    
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()

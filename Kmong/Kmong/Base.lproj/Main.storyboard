@@ -1553,9 +1553,9 @@ Experience in
                                         <state key="normal" image="001-settings-gears"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로그인 하세요!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vFQ-rc-cPZ">
-                                        <rect key="frame" x="100" y="344" width="174" height="26"/>
+                                        <rect key="frame" x="12" y="344" width="350" height="26"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="174" id="Pds-5z-eFW"/>
+                                            <constraint firstAttribute="width" constant="350" id="Pds-5z-eFW"/>
                                             <constraint firstAttribute="height" constant="26" id="hNO-Dp-bf9"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="19"/>
@@ -1608,6 +1608,7 @@ Experience in
                         <viewLayoutGuide key="safeArea" id="kYP-1D-bat"/>
                     </view>
                     <connections>
+                        <outlet property="loginBtn" destination="Ewd-Lf-YUQ" id="Zdz-4N-DIx"/>
                         <outlet property="username" destination="vFQ-rc-cPZ" id="YxB-WN-Z0D"/>
                         <segue destination="QWW-l2-Q5T" kind="show" identifier="toLogin" id="Oqu-GF-hQG"/>
                     </connections>
@@ -1701,12 +1702,22 @@ Experience in
                                     <constraint firstItem="xMs-et-1Gi" firstAttribute="centerX" secondItem="KQL-g4-Acg" secondAttribute="centerX" id="pgg-MQ-Dz1"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gtM-mx-fEj">
+                                <rect key="frame" x="0.0" y="35" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="nyz-jq-JSR"/>
+                                    <constraint firstAttribute="width" constant="30" id="pCX-Fp-hFh"/>
+                                </constraints>
+                                <state key="normal" image="back"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="KQL-g4-Acg" firstAttribute="leading" secondItem="IDs-QZ-CdI" secondAttribute="leading" id="0xf-cN-Y99"/>
                             <constraint firstItem="IDs-QZ-CdI" firstAttribute="bottom" secondItem="KQL-g4-Acg" secondAttribute="bottom" id="VBT-dH-Hx4"/>
                             <constraint firstItem="KQL-g4-Acg" firstAttribute="trailing" secondItem="IDs-QZ-CdI" secondAttribute="trailing" id="aba-9V-RBA"/>
+                            <constraint firstItem="gtM-mx-fEj" firstAttribute="top" secondItem="CdV-o9-Fea" secondAttribute="top" constant="35" id="jjf-ES-rEd"/>
+                            <constraint firstItem="gtM-mx-fEj" firstAttribute="leading" secondItem="IDs-QZ-CdI" secondAttribute="leading" id="upL-b3-I96"/>
                             <constraint firstItem="KQL-g4-Acg" firstAttribute="top" secondItem="CdV-o9-Fea" secondAttribute="top" id="vyo-BC-wZ0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IDs-QZ-CdI"/>
@@ -1714,11 +1725,13 @@ Experience in
                     <connections>
                         <outlet property="emailLabel" destination="uJy-no-Ij5" id="2ou-cZ-GD0"/>
                         <outlet property="passwordLabel" destination="zbv-8q-aeH" id="pgQ-UK-zXD"/>
+                        <segue destination="ntF-wY-ORN" kind="unwind" identifier="unwind" unwindAction="prepareForUnwindWithSegue:" id="524-65-gbl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qlE-Va-9ZT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ntF-wY-ORN" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="9404" y="24.7376311844078"/>
+            <point key="canvasLocation" x="9398" y="23"/>
         </scene>
         <!--Create AccountVC-->
         <scene sceneID="h8N-Gh-Zcx">
@@ -1779,15 +1792,37 @@ Experience in
                                             </textField>
                                         </subviews>
                                     </stackView>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="40B-74-nI9">
+                                        <rect key="frame" x="162" y="308.5" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="bmd-by-JoD"/>
+                                            <constraint firstAttribute="height" constant="50" id="cOm-Nn-J9X"/>
+                                        </constraints>
+                                    </activityIndicatorView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cID-aP-X7I">
+                                        <rect key="frame" x="0.0" y="35" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="bRJ-Vg-54v"/>
+                                            <constraint firstAttribute="width" constant="30" id="ycg-Nr-339"/>
+                                        </constraints>
+                                        <state key="normal" image="back"/>
+                                        <connections>
+                                            <action selector="backBtnPressed:" destination="xCR-yf-onY" eventType="touchUpInside" id="OBa-eh-7vn"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.97647058819999999" green="0.83137254900000002" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="dRc-Yk-gJ9" firstAttribute="centerX" secondItem="zHp-Va-bUV" secondAttribute="centerX" id="1K8-lA-JyH"/>
                                     <constraint firstItem="dRc-Yk-gJ9" firstAttribute="top" secondItem="mg2-Ec-KTb" secondAttribute="bottom" constant="20" id="2do-J2-Uci"/>
+                                    <constraint firstItem="40B-74-nI9" firstAttribute="centerX" secondItem="zHp-Va-bUV" secondAttribute="centerX" id="JaU-Q6-ewa"/>
                                     <constraint firstItem="cjo-Jw-6PV" firstAttribute="centerY" secondItem="zHp-Va-bUV" secondAttribute="centerY" constant="-100" id="OPk-VX-ylU"/>
+                                    <constraint firstItem="40B-74-nI9" firstAttribute="centerY" secondItem="zHp-Va-bUV" secondAttribute="centerY" id="OWS-9B-I0v"/>
                                     <constraint firstItem="mg2-Ec-KTb" firstAttribute="centerX" secondItem="zHp-Va-bUV" secondAttribute="centerX" id="RtS-f1-bpx"/>
                                     <constraint firstItem="cjo-Jw-6PV" firstAttribute="centerX" secondItem="zHp-Va-bUV" secondAttribute="centerX" id="XnZ-T5-M7S"/>
                                     <constraint firstItem="mg2-Ec-KTb" firstAttribute="top" secondItem="cjo-Jw-6PV" secondAttribute="bottom" constant="20" id="ct5-f0-GOs"/>
+                                    <constraint firstItem="cID-aP-X7I" firstAttribute="top" secondItem="zHp-Va-bUV" secondAttribute="top" constant="35" id="fCw-EC-KHK"/>
+                                    <constraint firstItem="cID-aP-X7I" firstAttribute="leading" secondItem="zHp-Va-bUV" secondAttribute="leading" id="wcK-28-sKB"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -1803,9 +1838,12 @@ Experience in
                     <connections>
                         <outlet property="emailLabel" destination="OTH-Q0-tY2" id="X6u-ZW-yFo"/>
                         <outlet property="passwordLabel" destination="dp1-QD-DSY" id="sXQ-z9-eea"/>
+                        <outlet property="spinner" destination="40B-74-nI9" id="xdV-UR-hSj"/>
+                        <segue destination="Rom-WO-HFf" kind="unwind" identifier="unwind" unwindAction="prepareForUnwindWithSegue:" id="J7G-FL-zPp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N5G-b1-9Xo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Rom-WO-HFf" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="10164" y="22.938530734632685"/>
         </scene>
