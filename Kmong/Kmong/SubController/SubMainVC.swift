@@ -24,11 +24,8 @@ class SubMainVC: UIViewController {
     
     var viewControllers: [UIViewController]!
     
-    var index: Int = 0
-    override func viewWillAppear(_ animated: Bool) {
-       
-        
-    }
+    var index: Int = 4
+
     override func viewDidLoad() {
         super.viewDidLoad()
         

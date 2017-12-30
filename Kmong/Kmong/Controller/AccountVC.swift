@@ -20,7 +20,7 @@ class AccountVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         handle = Auth.auth().addStateDidChangeListener { (auth, user) in
-            if Auth.auth().currentUser != nil {
+            if let user = user {
                 self.username.text = "환영합니다!"
                 self.loginBtn.setTitle("Logout", for: .normal)
                 
@@ -28,6 +28,7 @@ class AccountVC: UIViewController {
                 self.username.text = "로그인하세요!"
                 self.loginBtn.setTitle("Login", for: .normal)
             }
+            
         }
         
     }
