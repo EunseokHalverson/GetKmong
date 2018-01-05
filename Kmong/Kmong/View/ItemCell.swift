@@ -10,6 +10,7 @@ import UIKit
 import SwiftyStarRatingView
 
 class ItemCell: UITableViewCell {
+    
     @IBOutlet weak var itemImg: UIImageView!
     @IBOutlet weak var itemLbl: UILabel!
     @IBOutlet weak var itemUserName: UILabel!

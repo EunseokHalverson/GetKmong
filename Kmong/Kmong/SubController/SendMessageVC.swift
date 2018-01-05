@@ -18,7 +18,7 @@ class SendMessageVC: UIViewController {
     
     
     @IBAction func sendMessagePressed(_ sender: Any) {
-        ref.child("Posts").childByAutoId().setValue(textView.text)
+        ref.child("Message").childByAutoId().setValue(textView.text)
         
         presentingViewController?.dismiss(animated: true, completion: nil)
     }

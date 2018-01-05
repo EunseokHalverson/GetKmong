@@ -30,7 +30,7 @@ class DataService {
         Item(title: "Swift", imageName: "swift", rating: 4, userName: "CodingByEunseok"),
         Item(title: "Java", imageName: "java", rating: 3.5, userName: "CodingByEunseok"),
         Item(title: "C", imageName: "c", rating: 3, userName: "CodingByEunseok"),
-        Item(title: "C++", imageName: "c++", rating: 3.5, userName: "CodingByEunseok"),
+        Item(title: "C++", imageName: "c++", rating: 3, userName: "CodingByEunseok"),
         Item(title: "Unity3D Gaming", imageName: "unity3d", rating: 3, userName: "CodingByEunseok")
     ]
     

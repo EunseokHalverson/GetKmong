@@ -19,6 +19,7 @@
 		651E648D1FE1911C004F55BC /* SubMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651E648C1FE1911C004F55BC /* SubMainVC.swift */; };
 		653394E51FE17951004F8EE3 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653394E41FE17951004F8EE3 /* DataService.swift */; };
 		653394E71FE179CD004F8EE3 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653394E61FE179CD004F8EE3 /* Category.swift */; };
+		654DB2771FFFAA7B0019F2DF /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654DB2761FFFAA7B0019F2DF /* AuthService.swift */; };
 		656D33311FE1212E00787069 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656D33301FE1212E00787069 /* AppDelegate.swift */; };
 		656D33361FE1212E00787069 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 656D33341FE1212E00787069 /* Main.storyboard */; };
 		656D33381FE1212E00787069 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 656D33371FE1212E00787069 /* Assets.xcassets */; };
@@ -74,6 +75,7 @@
 		651E648C1FE1911C004F55BC /* SubMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubMainVC.swift; sourceTree = "<group>"; };
 		653394E41FE17951004F8EE3 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		653394E61FE179CD004F8EE3 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		654DB2761FFFAA7B0019F2DF /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		656D332D1FE1212E00787069 /* Kmong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kmong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		656D33301FE1212E00787069 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		656D33351FE1212E00787069 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				653394E41FE17951004F8EE3 /* DataService.swift */,
+				654DB2761FFFAA7B0019F2DF /* AuthService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -588,6 +591,7 @@
 				65AD43EA1FE435B0006388FA /* Item.swift in Sources */,
 				657085951FE4326C00969621 /* HomeVC.swift in Sources */,
 				65AD44141FE81A3F006388FA /* VideoView.swift in Sources */,
+				654DB2771FFFAA7B0019F2DF /* AuthService.swift in Sources */,
 				651E0F6F1FF4106A005E51FB /* SendMessageVC.swift in Sources */,
 				6587ECD21FE1250500A617EF /* MainVC.swift in Sources */,
 				65AD43F91FE511BD006388FA /* PageView.swift in Sources */,

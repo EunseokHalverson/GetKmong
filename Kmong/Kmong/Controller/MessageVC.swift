@@ -8,12 +8,12 @@
 
 import UIKit
 import FirebaseDatabase
+import Firebase
 
 class MessageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
     
     @IBOutlet weak var tableView: UITableView!
-    
+
     var postData = [String]()
     var ref: DatabaseReference?
     var databaseHandle: DatabaseHandle?
@@ -21,11 +21,11 @@ class MessageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+ 
         tableView.delegate = self
         tableView.dataSource = self
         ref = Database.database().reference()
-        databaseHandle = ref?.child("Posts").observe(.childAdded, with: { (snapshot) in
+        databaseHandle = ref?.child("Message").observe(.childAdded, with: { (snapshot) in
             let post = snapshot.value as? String
             if let actualPost = post{
                 self.postData.append(actualPost)
@@ -42,7 +42,7 @@ class MessageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell")
         cell?.textLabel?.text = postData[indexPath.row]
-        
+       
         return cell!
     }
 
