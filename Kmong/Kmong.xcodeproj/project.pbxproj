@@ -364,7 +364,7 @@
 					656D332C1FE1212E00787069 = {
 						CreatedOnToolsVersion = 9.1;
 						LastSwiftMigration = 0910;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					656D33401FE1212E00787069 = {
 						CreatedOnToolsVersion = 9.1;
@@ -764,9 +764,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X7JPFRW45P;
 				INFOPLIST_FILE = Kmong/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bitmon.Kmong;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -784,9 +786,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X7JPFRW45P;
 				INFOPLIST_FILE = Kmong/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bitmon.Kmong;
 				PRODUCT_NAME = "$(TARGET_NAME)";
