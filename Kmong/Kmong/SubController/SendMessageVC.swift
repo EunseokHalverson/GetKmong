@@ -15,11 +15,9 @@ class SendMessageVC: UIViewController {
     @IBOutlet weak var textView: UITextView!
     var ref: DatabaseReference!
     
-    
-    
+
     @IBAction func sendMessagePressed(_ sender: Any) {
         ref.child("Message").childByAutoId().setValue(textView.text)
-        
         presentingViewController?.dismiss(animated: true, completion: nil)
     }
     @IBAction func backBtnPressed(_ sender: Any) {
@@ -28,7 +26,6 @@ class SendMessageVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
-        // Do any additional setup after loading the view.
     }
 
    

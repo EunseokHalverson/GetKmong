@@ -14,7 +14,8 @@ class MessageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
 
-    var postData = [String]()
+    var msgList = [Message]()
+    
     var ref: DatabaseReference?
     var databaseHandle: DatabaseHandle?
  
@@ -24,26 +25,31 @@ class MessageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
  
         tableView.delegate = self
         tableView.dataSource = self
-        ref = Database.database().reference()
-        databaseHandle = ref?.child("Message").observe(.childAdded, with: { (snapshot) in
-            let post = snapshot.value as? String
-            if let actualPost = post{
-                self.postData.append(actualPost)
-                self.tableView.reloadData()
-            }
-            
+        let user = Auth.auth().currentUser?.uid
+        ref = Database.database().reference().child("Message").child(user!)
+        ref?.observe(.childAdded, with: { (snapshot) in
+            let snapshotValue = snapshot.value as! NSDictionary
+            let body = snapshotValue["body"] as! String
+            let from = snapshotValue["from"] as! String
+            let date = snapshotValue["date"] as! String
+            let msg = Message(body: body, date: date, from: from)
+            self.msgList.append(msg)
+            self.tableView.reloadData()
         })
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return postData.count
+        return msgList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell")
-        cell?.textLabel?.text = postData[indexPath.row]
-       
-        return cell!
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as? MessageCell{
+            cell.updateView(msg: msgList[indexPath.row])
+            return cell
+        }else{
+            return MessageCell()
+        }
     }
 
 }

@@ -42,6 +42,9 @@
 		65AD44161FE84C8D006388FA /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AD44151FE84C8D006388FA /* ItemCell.swift */; };
 		65AD44181FE84CCA006388FA /* HomeItemsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AD44171FE84CCA006388FA /* HomeItemsVC.swift */; };
 		65C507A51FE2DC3600A30675 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C507A41FE2DC3600A30675 /* CircleImage.swift */; };
+		65EBE8CB20033BF500B1DB03 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EBE8CA20033BF500B1DB03 /* User.swift */; };
+		65EBE8CD20033C7500B1DB03 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EBE8CC20033C7500B1DB03 /* Message.swift */; };
+		65EBE8CF20033E1600B1DB03 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EBE8CE20033E1600B1DB03 /* MessageCell.swift */; };
 		6AA5C2598081FBA5B53D0916 /* Pods_Kmong.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B34C4E3ABD35BEB6851479F7 /* Pods_Kmong.framework */; };
 		DE74A360A70792C43B9307EE /* Pods_KmongTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F78CA27EC5AE6A99A76F9E65 /* Pods_KmongTests.framework */; };
 /* End PBXBuildFile section */
@@ -104,6 +107,9 @@
 		65AD44151FE84C8D006388FA /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		65AD44171FE84CCA006388FA /* HomeItemsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeItemsVC.swift; sourceTree = "<group>"; };
 		65C507A41FE2DC3600A30675 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
+		65EBE8CA20033BF500B1DB03 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		65EBE8CC20033C7500B1DB03 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		65EBE8CE20033E1600B1DB03 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		815ACA7C9A99E18F58F26C18 /* Pods-KmongTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KmongTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KmongTests/Pods-KmongTests.release.xcconfig"; sourceTree = "<group>"; };
 		94D4EE780A97CD0EAC6C925E /* Pods-Kmong.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kmong.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kmong/Pods-Kmong.debug.xcconfig"; sourceTree = "<group>"; };
 		98C280DC1235B6376F745BBB /* Pods-Kmong.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kmong.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kmong/Pods-Kmong.release.xcconfig"; sourceTree = "<group>"; };
@@ -234,6 +240,7 @@
 				65AD43F81FE511BD006388FA /* PageView.swift */,
 				65AD44131FE81A3F006388FA /* VideoView.swift */,
 				65AD44151FE84C8D006388FA /* ItemCell.swift */,
+				65EBE8CE20033E1600B1DB03 /* MessageCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -244,6 +251,8 @@
 				653394E61FE179CD004F8EE3 /* Category.swift */,
 				65AD43E91FE435B0006388FA /* Item.swift */,
 				65AD43FE1FE62AAB006388FA /* Value.swift */,
+				65EBE8CA20033BF500B1DB03 /* User.swift */,
+				65EBE8CC20033C7500B1DB03 /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -574,12 +583,14 @@
 				65AD43FF1FE62AAB006388FA /* Value.swift in Sources */,
 				651E0F671FF3C51C005E51FB /* CreateAccountVC.swift in Sources */,
 				651E648D1FE1911C004F55BC /* SubMainVC.swift in Sources */,
+				65EBE8CD20033C7500B1DB03 /* Message.swift in Sources */,
 				651E0F6D1FF4105A005E51FB /* MessageVC.swift in Sources */,
 				65AD44051FE6439C006388FA /* CategoryCollectionCell.swift in Sources */,
 				65AD44091FE7C9B6006388FA /* HomeUrlVC.swift in Sources */,
 				653394E71FE179CD004F8EE3 /* Category.swift in Sources */,
 				657085931FE431B500969621 /* BackButton.swift in Sources */,
 				651D21241FE1AE7B000FD273 /* CategoryVC.swift in Sources */,
+				65EBE8CF20033E1600B1DB03 /* MessageCell.swift in Sources */,
 				65AD43F71FE50F20006388FA /* HomePageVC.swift in Sources */,
 				653394E51FE17951004F8EE3 /* DataService.swift in Sources */,
 				65AD44011FE64239006388FA /* HomeCollectionVC.swift in Sources */,
@@ -590,6 +601,7 @@
 				65AD44181FE84CCA006388FA /* HomeItemsVC.swift in Sources */,
 				65AD43EA1FE435B0006388FA /* Item.swift in Sources */,
 				657085951FE4326C00969621 /* HomeVC.swift in Sources */,
+				65EBE8CB20033BF500B1DB03 /* User.swift in Sources */,
 				65AD44141FE81A3F006388FA /* VideoView.swift in Sources */,
 				654DB2771FFFAA7B0019F2DF /* AuthService.swift in Sources */,
 				651E0F6F1FF4106A005E51FB /* SendMessageVC.swift in Sources */,
