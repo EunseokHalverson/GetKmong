@@ -184,8 +184,8 @@
 			isa = PBXGroup;
 			children = (
 				65AD440A1FE80B65006388FA /* video.mp4 */,
-				653394E31FE17933004F8EE3 /* Service */,
 				656D33601FE1214C00787069 /* Model */,
+				653394E31FE17933004F8EE3 /* Service */,
 				656D335F1FE1214800787069 /* View */,
 				65AD43EB1FE454C6006388FA /* SubController */,
 				656D335E1FE1213700787069 /* Controller */,

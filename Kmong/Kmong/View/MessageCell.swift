@@ -19,7 +19,7 @@ class MessageCell: UITableViewCell {
         timeLbl.text = msg.date
         bodyLbl.text = msg.body
         fromLbl.text = msg.from
-        views.layer.cornerRadius = 5
+        views.layer.cornerRadius = 10
     }
 
 }
