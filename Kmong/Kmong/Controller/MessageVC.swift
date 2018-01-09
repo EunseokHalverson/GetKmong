@@ -19,14 +19,15 @@ class MessageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var ref: DatabaseReference?
     var databaseHandle: DatabaseHandle?
  
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
- 
-        tableView.delegate = self
-        tableView.dataSource = self
+    override func viewWillAppear(_ animated: Bool) {
+        
         let user = Auth.auth().currentUser?.uid
-        ref = Database.database().reference().child("Message").child(user!)
+        if Auth.auth().currentUser != nil{
+            ref = Database.database().reference().child("Message").child(user!)
+        }else{
+            msgList.removeAll()
+            tableView.reloadData()
+        }
         ref?.observe(.childAdded, with: { (snapshot) in
             let snapshotValue = snapshot.value as! NSDictionary
             let body = snapshotValue["body"] as! String
@@ -36,6 +37,17 @@ class MessageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             self.msgList.append(msg)
             self.tableView.reloadData()
         })
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+   
+        
+        
+        
         
     }
     
@@ -45,7 +57,12 @@ class MessageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as? MessageCell{
-            cell.updateView(msg: msgList[indexPath.row])
+            //cell.updateView(msg: msgList[indexPath.row])
+
+            cell.timeLbl.text = msgList[indexPath.row].date
+            cell.bodyLbl.text = msgList[indexPath.row].body
+            cell.fromLbl.text = msgList[indexPath.row].from
+            cell.views.layer.cornerRadius = 10
             return cell
         }else{
             return MessageCell()

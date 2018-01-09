@@ -14,14 +14,14 @@ class DataService {
     
     private let pageCategories = [
         Category(title: "#자기소개", imageName: "008-resume.png"),
-        Category(title: "#학력&전공", imageName: "007-mortarboard.png"),
+        Category(title: "#학교&전공", imageName: "007-mortarboard.png"),
         Category(title: "#경험", imageName: "006-group.png"),
         Category(title: "#연락처", imageName: "005-agenda.png")
     ]
     
     private let categories = [
         Category(title: "자기소개", imageName: "008-resume.png"),
-        Category(title: "학력&전공", imageName: "007-mortarboard.png"),
+        Category(title: "학교&전공", imageName: "007-mortarboard.png"),
         Category(title: "경험", imageName: "006-group.png"),
         Category(title: "연락처", imageName: "005-agenda.png")
     ]
