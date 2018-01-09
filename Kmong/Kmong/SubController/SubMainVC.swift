@@ -47,46 +47,30 @@ class SubMainVC: UIViewController {
     @IBAction func tabPressed(_ sender: UIButton) {
         let previouseIndex = index
         index = sender.tag
-        tabs[previouseIndex].isSelected = false
-        let previousVC = viewControllers[previouseIndex]
-        
-        previousVC.willMove(toParentViewController: nil)
-        previousVC.view.removeFromSuperview()
-        previousVC.removeFromParentViewController()
-        
-        sender.isSelected = true
-        let vc = viewControllers[index]
-        
-        addChildViewController(vc)
-        vc.view.frame = contentView.bounds
-        contentView.addSubview(vc.view)
-        vc.didMove(toParentViewController: self)
-        
         
         if index == 2 && Auth.auth().currentUser == nil {
-            
             let alert = UIAlertController(title: "메세지를 보시려면 로그인해주세요.",
                                           message: "",
                                           preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "확인", style: .default, handler: { (success) in
-                if success.isEnabled == true {
-                    self.tabs[previouseIndex].isSelected = false
-                    let previousVC = self.viewControllers[previouseIndex]
-                    
-                    previousVC.willMove(toParentViewController: nil)
-                    previousVC.view.removeFromSuperview()
-                    previousVC.removeFromParentViewController()
-                    
-                    sender.isSelected = true
-                    let vc = self.viewControllers[4]
-                    
-                    self.addChildViewController(vc)
-                    vc.view.frame = self.contentView.bounds
-                    self.contentView.addSubview(vc.view)
-                    vc.didMove(toParentViewController: self)
-                }
-            }))
+            alert.addAction(UIAlertAction(title: "확인", style: .default))
             self.present(alert, animated: true)
+            
+        }else{
+            tabs[previouseIndex].isSelected = false
+            let previousVC = viewControllers[previouseIndex]
+            
+            previousVC.willMove(toParentViewController: nil)
+            previousVC.view.removeFromSuperview()
+            previousVC.removeFromParentViewController()
+            
+            sender.isSelected = true
+            let vc = viewControllers[index]
+            
+            addChildViewController(vc)
+            vc.view.frame = contentView.bounds
+            contentView.addSubview(vc.view)
+            vc.didMove(toParentViewController: self)
+            
         }
         
     }

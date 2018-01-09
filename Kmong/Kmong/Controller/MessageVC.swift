@@ -18,37 +18,49 @@ class MessageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var ref: DatabaseReference?
     var databaseHandle: DatabaseHandle?
- 
+    var handle: AuthStateDidChangeListenerHandle?
+    
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        let uss = Auth.auth().currentUser?.uid
+        ref = Database.database().reference().child("Message").child(uss!)
+        ref?.child("messages").removeAllObservers()
+    }
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         
-        let user = Auth.auth().currentUser?.uid
-        if Auth.auth().currentUser != nil{
-            ref = Database.database().reference().child("Message").child(user!)
-        }else{
-            msgList.removeAll()
-            tableView.reloadData()
+        self.msgList.removeAll()
+        self.tableView.reloadData()
+        
+        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+            if let u = user {
+                let uss = Auth.auth().currentUser?.uid
+                self.ref = Database.database().reference().child("Message").child(uss!)
+                self.ref?.observe(.childAdded, with: { (snapshot) in
+                    let snapshotValue = snapshot.value as! NSDictionary
+                    let body = snapshotValue["body"] as! String
+                    let from = snapshotValue["from"] as! String
+                    let date = snapshotValue["date"] as! String
+                    let msg = Message(body: body, date: date, from: from)
+                    self.msgList.append(msg)
+                    self.tableView.reloadData()
+                })
+                print("USER_SIGNED_IN")
+            } else {
+
+                print("USER_SIGNED_OUT")
+            }
+            
         }
-        ref?.observe(.childAdded, with: { (snapshot) in
-            let snapshotValue = snapshot.value as! NSDictionary
-            let body = snapshotValue["body"] as! String
-            let from = snapshotValue["from"] as! String
-            let date = snapshotValue["date"] as! String
-            let msg = Message(body: body, date: date, from: from)
-            self.msgList.append(msg)
-            self.tableView.reloadData()
-        })
+        
+       
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.delegate = self
         tableView.dataSource = self
-   
-        
-        
-        
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -57,8 +69,6 @@ class MessageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as? MessageCell{
-            //cell.updateView(msg: msgList[indexPath.row])
-
             cell.timeLbl.text = msgList[indexPath.row].date
             cell.bodyLbl.text = msgList[indexPath.row].body
             cell.fromLbl.text = msgList[indexPath.row].from
