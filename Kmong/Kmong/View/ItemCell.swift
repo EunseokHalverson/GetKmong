@@ -27,6 +27,9 @@ class ItemCell: UITableViewCell {
         itemLbl.text = item.title
         itemUserName.text = item.userName
         views.layer.cornerRadius = 5
+        views.layer.borderWidth = 1
+        views.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        
         let starRatingView = SwiftyStarRatingView()
         starRatingView.frame = ratingBar.bounds
         starRatingView.allowsHalfStars = true

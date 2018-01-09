@@ -12,15 +12,15 @@ class Service{
     
     var seller: String?
     var price: String?
-    var image: String?
-    var name: String?
+    var image: UIImage?
     var description: String?
+    var rating: Double?
     
-    init(seller: String, price: String?, image: String?, name: String?, description: String?){
+    init(seller: String, price: String?, image: UIImage?, description: String?, rating: Double?){
         self.seller = seller
         self.price = price
         self.image = image
-        self.name = name
         self.description = description
+        self.rating = rating
     }
 }

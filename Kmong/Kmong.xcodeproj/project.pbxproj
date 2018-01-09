@@ -272,9 +272,9 @@
 				651E648C1FE1911C004F55BC /* SubMainVC.swift */,
 				65AD43F61FE50F20006388FA /* HomePageVC.swift */,
 				65AD44001FE64239006388FA /* HomeCollectionVC.swift */,
-				65AD44081FE7C9B6006388FA /* HomeUrlVC.swift */,
 				65AD44171FE84CCA006388FA /* HomeItemsVC.swift */,
 				651E0F641FF3C508005E51FB /* LoginVC.swift */,
+				65AD44081FE7C9B6006388FA /* HomeUrlVC.swift */,
 				651E0F661FF3C51C005E51FB /* CreateAccountVC.swift */,
 				651E0F6E1FF4106A005E51FB /* SendMessageVC.swift */,
 			);

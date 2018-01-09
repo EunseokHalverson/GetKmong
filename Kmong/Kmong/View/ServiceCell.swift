@@ -10,6 +10,7 @@ import UIKit
 
 class ServiceCell: UITableViewCell {
 
+    @IBOutlet weak var ratingBar: UIView!
     @IBOutlet weak var views: UIView!
     @IBOutlet weak var serviceSeller: UILabel!
     @IBOutlet weak var servicePrice: UILabel!
