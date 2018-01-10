@@ -32,6 +32,7 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "items") as? ItemCell{
             let item = DataService.instance.getItems()[indexPath.row]
+            cell.selectionStyle = UITableViewCellSelectionStyle.none
             cell.updateView(item: item)
 
             return cell

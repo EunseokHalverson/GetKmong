@@ -34,9 +34,6 @@ class DatabaseVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         tempView.isHidden = false
         spinner.startAnimating()
         
-
-
-        
         
         self.ref = Database.database().reference().child("Service")
         self.ref?.observe(.childAdded, with: { (snapshot) in
@@ -100,6 +97,7 @@ class DatabaseVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
             cell.views.layer.cornerRadius = 10
             cell.views.layer.borderWidth = 1
             cell.views.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+            cell.selectionStyle = UITableViewCellSelectionStyle.none
             return cell
         }else{
             return ServiceCell()

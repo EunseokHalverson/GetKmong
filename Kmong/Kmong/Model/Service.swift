@@ -13,6 +13,7 @@ class Service{
     var seller: String?
     var price: String?
     var image: UIImage?
+    //var title: String?
     var description: String?
     var rating: Double?
     
