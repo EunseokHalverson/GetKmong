@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'CA14251F23CE44B721DC3A788F0AA88B'
+               BlueprintIdentifier = '8008E218E5EB66A9A8DEF0F343FD8CAB'
                BlueprintName = 'Pods-Kmong'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods-Kmong.framework'>

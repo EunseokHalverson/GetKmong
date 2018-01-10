@@ -116,6 +116,7 @@
 		65EBE8D22004C86400B1DB03 /* ServiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCell.swift; sourceTree = "<group>"; };
 		65EBE8D42004C93F00B1DB03 /* DatabaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseVC.swift; sourceTree = "<group>"; };
 		65EBE8D62004CAC200B1DB03 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		65EBE8DB2006659C00B1DB03 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		815ACA7C9A99E18F58F26C18 /* Pods-KmongTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KmongTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KmongTests/Pods-KmongTests.release.xcconfig"; sourceTree = "<group>"; };
 		94D4EE780A97CD0EAC6C925E /* Pods-Kmong.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kmong.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kmong/Pods-Kmong.debug.xcconfig"; sourceTree = "<group>"; };
 		98C280DC1235B6376F745BBB /* Pods-Kmong.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kmong.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kmong/Pods-Kmong.release.xcconfig"; sourceTree = "<group>"; };
@@ -167,6 +168,7 @@
 		656D33241FE1212E00787069 = {
 			isa = PBXGroup;
 			children = (
+				65EBE8DB2006659C00B1DB03 /* Bridging-Header.h */,
 				656D332F1FE1212E00787069 /* Kmong */,
 				656D33441FE1212E00787069 /* KmongTests */,
 				656D334F1FE1212E00787069 /* KmongUITests */,
