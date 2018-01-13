@@ -9,13 +9,16 @@
 import Foundation
 
 class Message{
-    var body: String?
-    var date: String?
-    var from: String?
     
-    init(body: String, date: String?, from: String?){
-        self.body = body
-        self.date = date
-        self.from = from
+    var sellerImage: UIImage?
+    var seller: String?
+    var description: String?
+    var chatId: String?
+    
+    init(sellerImage: UIImage?, seller: String?, description: String?, chatId: String?){
+        self.sellerImage = sellerImage
+        self.seller = seller
+        self.description = description
+        self.chatId = chatId
     }
 }

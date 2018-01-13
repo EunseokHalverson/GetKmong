@@ -23,7 +23,8 @@ class DatabaseVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     var databaseHandle: DatabaseHandle?
     var handle: AuthStateDidChangeListenerHandle?
     
-
+    var buyerUID: String = "0"
+    var sellerUID: String = "1"
     
     override func viewWillAppear(_ animated: Bool) {
         
@@ -34,7 +35,6 @@ class DatabaseVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         tempView.isHidden = false
         spinner.startAnimating()
         
-        
         self.ref = Database.database().reference().child("Service")
         self.ref?.observe(.childAdded, with: { (snapshot) in
             let snapshotValue = snapshot.value as! NSDictionary
@@ -43,6 +43,9 @@ class DatabaseVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
             let image = snapshotValue["imageUrl"] as! String
             let price = snapshotValue["price"] as! String
             let rating = snapshotValue["rating"] as! Double
+            
+            self.sellerUID = snapshotValue["uid"] as! String
+            self.buyerUID = (Auth.auth().currentUser?.uid)!
             
             let storage = Storage.storage()
             let storageRef = storage.reference()
@@ -67,6 +70,8 @@ class DatabaseVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        serviceList.removeAll()
+        tableView.reloadData()
         spinner.isHidden = true
         tempView.isHidden = true
         tableView.delegate = self
@@ -92,19 +97,34 @@ class DatabaseVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
             starRatingView.minimumValue = 0         //default is 0
             starRatingView.value = CGFloat(serviceList[indexPath.row].rating!)
             starRatingView.tintColor = #colorLiteral(red: 0.9837014079, green: 0.8553137183, blue: 0.3496560156, alpha: 1)
+            starRatingView.isEnabled = false
             
             cell.ratingBar.addSubview(starRatingView)
             cell.views.layer.cornerRadius = 10
             cell.views.layer.borderWidth = 1
             cell.views.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-            cell.selectionStyle = UITableViewCellSelectionStyle.none
             return cell
         }else{
             return ServiceCell()
         }
     }
     
-
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+//        let sellerRef = Database.database().reference().child("ChatList").child(sellerUID).childByAutoId()
+//        let chatId = sellerRef.key
+////        let buyerRef = Database.database().reference().child("ChatList").child(sellerUID).child(chatId)
+////
+//
+//        let updatedUserData = ["description": serviceList[indexPath.row].description as Any,
+//                               "imageUrl": serviceList[indexPath.row].image as Any,
+//                               "seller": serviceList[indexPath.row].seller as Any]
+////        let updatedUserData2 = ["description": serviceList[indexPath.row].description!, "imageUrl": serviceList[indexPath.row].image!, "seller": serviceList[indexPath.row].seller!] as [String : Any]
+//
+//        sellerRef.updateChildValues(updatedUserData)
+//        buyerRef.updateChildValues(updatedUserData2)
+        //performSegue(withIdentifier: "sendMessage", sender: nil)
+    }
    
 
 }

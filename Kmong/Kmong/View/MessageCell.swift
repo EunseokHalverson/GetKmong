@@ -9,10 +9,8 @@
 import UIKit
 
 class MessageCell: UITableViewCell {
-
+    @IBOutlet weak var seller: UILabel!
     @IBOutlet weak var views: UIView!
-    @IBOutlet weak var timeLbl: UILabel!
-    @IBOutlet weak var bodyLbl: UILabel!
-    @IBOutlet weak var fromLbl: UILabel!
-
+    @IBOutlet weak var sellerImage: UIImageView!
+    @IBOutlet weak var desc: UILabel!
 }

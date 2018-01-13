@@ -36,6 +36,7 @@ class LoginVC: UIViewController {
                     self.spinner.stopAnimating()
                     self.performSegue(withIdentifier: "unwind", sender: self)
                     NotificationCenter.default.post(name: Notification.Name("USER_CREATED"), object: nil)
+                    NotificationCenter.default.post(name: Notification.Name("AA"), object: nil)
                 }else{
                     self.spinner.isHidden = true
                     self.spinner.stopAnimating()
