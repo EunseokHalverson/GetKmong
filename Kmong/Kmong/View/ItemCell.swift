@@ -37,6 +37,7 @@ class ItemCell: UITableViewCell {
         starRatingView.minimumValue = 0         //default is 0
         starRatingView.value = CGFloat(item.rating)               //default is 0
         starRatingView.tintColor = #colorLiteral(red: 0.9837014079, green: 0.8553137183, blue: 0.3496560156, alpha: 1)
+        starRatingView.isEnabled = false
         ratingBar.addSubview(starRatingView)
 
     }

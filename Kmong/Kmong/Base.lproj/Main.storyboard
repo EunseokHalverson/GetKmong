@@ -1691,12 +1691,12 @@ Experience in
                         <outlet property="spinner" destination="33e-pR-1D7" id="p0s-qE-6A6"/>
                         <outlet property="tableView" destination="Yu8-hW-UYE" id="uSA-2n-1iR"/>
                         <outlet property="tempView" destination="PaR-6e-lzm" id="JiD-IC-5OS"/>
-                        <segue destination="ygP-yh-reF" kind="show" id="Uim-4O-Rdr"/>
+                        <segue destination="ygP-yh-reF" kind="show" identifier="sendMessage" id="Uim-4O-Rdr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cM1-Do-Dbu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6764" y="1066"/>
+            <point key="canvasLocation" x="6550" y="1066"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="uV4-z7-rqt">
@@ -1841,7 +1841,7 @@ Experience in
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="isa-XU-kH9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7513" y="1066"/>
+            <point key="canvasLocation" x="7522" y="1066"/>
         </scene>
         <!--AccountVC-->
         <scene sceneID="RKf-u9-bcF">

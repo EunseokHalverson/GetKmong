@@ -84,5 +84,5 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
     @IBAction func expPressed(_ sender: Any) {
         updateCollectionCell(identifier: "categoryToExperience")
     }
-    
+
 }

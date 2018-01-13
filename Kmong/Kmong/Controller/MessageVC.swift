@@ -19,8 +19,10 @@ class MessageVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var ref: DatabaseReference?
     var databaseHandle: DatabaseHandle?
     var handle: AuthStateDidChangeListenerHandle?
+    
     var chatId: String = ""
     var sellerName: String = ""
+    
     override func viewWillAppear(_ animated: Bool) {
         
         self.messageList.removeAll()
@@ -36,7 +38,7 @@ class MessageVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             let seller = snapshotValue["seller"] as! String
             let desc = snapshotValue["description"] as! String
             let image = snapshotValue["imageUrl"] as! String
-            let chatId = snapshotValue["chatId"] as! String
+            let chatId = snapshot.key
             
             let storage = Storage.storage()
             let storageRef = storage.reference()
@@ -87,17 +89,6 @@ class MessageVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             return cell
         }else{
             return MessageCell()
-        }
-    }
-    
-    var valueToPass:String!
-    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?){
-        
-        if (segue.identifier == "yourSegueIdentifer") {
-            // initialize new view controller and cast it as your view controller
-            let viewController = segue.destination as! SendMessageVC
-            // your new view controller should have property that will store passed value
-            viewController.chatId = valueToPass
         }
     }
     

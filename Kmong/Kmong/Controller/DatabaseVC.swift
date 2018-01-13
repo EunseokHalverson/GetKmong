@@ -23,8 +23,9 @@ class DatabaseVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     var databaseHandle: DatabaseHandle?
     var handle: AuthStateDidChangeListenerHandle?
     
-    var buyerUID: String = "0"
-    var sellerUID: String = "1"
+    var buyerUID: String = ""
+    var chatId: String = ""
+    var getName: String? = ""
     
     override func viewWillAppear(_ animated: Bool) {
         
@@ -35,27 +36,31 @@ class DatabaseVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         tempView.isHidden = false
         spinner.startAnimating()
         
+        if Auth.auth().currentUser?.uid != nil{
+            buyerUID = (Auth.auth().currentUser?.uid)!
+        }else{
+            return
+        }
+        
         self.ref = Database.database().reference().child("Service")
         self.ref?.observe(.childAdded, with: { (snapshot) in
             let snapshotValue = snapshot.value as! NSDictionary
             let seller = snapshotValue["seller"] as! String
+            self.getName = seller
             let desc = snapshotValue["description"] as! String
-            let image = snapshotValue["imageUrl"] as! String
+            let imageName = snapshotValue["imageUrl"] as! String
             let price = snapshotValue["price"] as! String
             let rating = snapshotValue["rating"] as! Double
-            
-            self.sellerUID = snapshotValue["uid"] as! String
-            self.buyerUID = (Auth.auth().currentUser?.uid)!
-            
+            let uid = snapshotValue["uid"] as! String
             let storage = Storage.storage()
             let storageRef = storage.reference()
-            let islandRef = storageRef.child("Images/\(image).png")
+            let islandRef = storageRef.child("Images/\(imageName).png")
             islandRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
                 if let error = error {
                     print(error.localizedDescription)
                 } else {
                     let image = UIImage(data: data!)
-                    let service = Service(seller: seller, price: price, image: image,  description: desc, rating: rating)
+                    let service = Service(seller: seller, price: price, image: image,  description: desc, rating: rating, imageName: imageName, uid: uid)
                     
                     self.serviceList.append(service)
                     self.tableView.reloadData()
@@ -109,22 +114,46 @@ class DatabaseVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         }
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    
-//        let sellerRef = Database.database().reference().child("ChatList").child(sellerUID).childByAutoId()
-//        let chatId = sellerRef.key
-////        let buyerRef = Database.database().reference().child("ChatList").child(sellerUID).child(chatId)
-////
-//
-//        let updatedUserData = ["description": serviceList[indexPath.row].description as Any,
-//                               "imageUrl": serviceList[indexPath.row].image as Any,
-//                               "seller": serviceList[indexPath.row].seller as Any]
-////        let updatedUserData2 = ["description": serviceList[indexPath.row].description!, "imageUrl": serviceList[indexPath.row].image!, "seller": serviceList[indexPath.row].seller!] as [String : Any]
-//
-//        sellerRef.updateChildValues(updatedUserData)
-//        buyerRef.updateChildValues(updatedUserData2)
-        //performSegue(withIdentifier: "sendMessage", sender: nil)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.identifier == "sendMessage" {
+            let navController = segue.destination as! UINavigationController
+            let detailController = navController.topViewController as! SendMessageVC
+            detailController.chatId = chatId
+            detailController.sellerName = getName!
+        }
     }
-   
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let sellerUID = serviceList[indexPath.row].uid!
+        let sellerRef = Database.database().reference().child("ChatList").child(sellerUID).childByAutoId()
+        chatId = sellerRef.key
+        let buyerRef = Database.database().reference().child("ChatList").child(buyerUID).child(chatId)
+        let checkActivity = Database.database().reference()
+        let updateActivity = Database.database().reference().child("ChatActivity").child(sellerUID).child(buyerUID)
+        
+        
+        let post = ["description": serviceList[indexPath.row].description!,
+                    "imageUrl": serviceList[indexPath.row].imageName!,
+                    "seller": serviceList[indexPath.row].seller!] as [String : Any]
+        
+        let postChat = ["active": true]
+        
+        getName = serviceList[indexPath.row].seller!
+        checkActivity.child("ChatActivity").child(sellerUID).observe(.value, with: { snapshot in
+            print(self.buyerUID)
+            if snapshot.hasChild(self.buyerUID){
+                self.performSegue(withIdentifier: "sendMessage", sender: nil)
+            }else{
+                if sellerUID != self.buyerUID{
+                    updateActivity.updateChildValues(postChat)
+                    sellerRef.updateChildValues(post)
+                    buyerRef.updateChildValues(post)
+                }else{
+                    print("same user")
+                }
+            }
+        }}
+    }
 
 }

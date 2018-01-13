@@ -17,6 +17,7 @@ class SendMessageVC: JSQMessagesViewController {
     }
     
     var messages = [JSQMessage]()
+    
     var chatId: String = "0000"
     var sellerName: String = "0000"
     
@@ -56,7 +57,6 @@ class SendMessageVC: JSQMessagesViewController {
                 if let message = JSQMessage(senderId: id, displayName: name, text: text)
                 {
                     self?.messages.append(message)
-                    
                     self?.finishReceivingMessage()
                 }
             }
