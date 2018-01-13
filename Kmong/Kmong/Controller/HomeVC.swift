@@ -10,7 +10,9 @@ import UIKit
 
 
 class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
-    
+    @IBOutlet weak var a: UISearchBar!
+
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var homeCollectionView: UIView!
     @IBOutlet weak var homePageView: UIView!
     @IBOutlet weak var homeUrlView: UIView!
@@ -40,17 +42,22 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
             return CategoryCell()
         }
     }
-    
+    @objc func handleTap(){
+        view.endEditing(true)
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        searchBar.resignFirstResponder()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
         pageVC = storyboard.instantiateViewController(withIdentifier: "HomePageView")
         collectionVC = storyboard.instantiateViewController(withIdentifier: "HomeCollectionView")
         urlVC = storyboard.instantiateViewController(withIdentifier: "HomeUrlView")
-       
+        let tap = UITapGestureRecognizer(target: self, action: #selector(CreateAccountVC.handleTap))
+        view.addGestureRecognizer(tap)
         
         viewControllers = [pageVC, collectionVC, urlVC]
         uiViews = [homePageView, homeCollectionView, homeUrlView]

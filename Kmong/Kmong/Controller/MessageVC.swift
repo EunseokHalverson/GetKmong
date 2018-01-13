@@ -68,6 +68,8 @@ class MessageVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         tableView.reloadData()
         spinner.isHidden = true
         views.isHidden = true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(CreateAccountVC.handleTap))
+        view.addGestureRecognizer(tap)
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -92,6 +94,13 @@ class MessageVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         }
     }
     
+    @IBOutlet weak var searchBar: UISearchBar!
+    @objc func handleTap(){
+        view.endEditing(true)
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        searchBar.resignFirstResponder()
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         if segue.identifier == "sendMessage" {

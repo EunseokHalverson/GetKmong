@@ -25,24 +25,20 @@ class AccountVC: UIViewController {
           NotificationCenter.default.addObserver(self, selector: #selector(AccountVC.userDataDidChange(_:)), name: Notification.Name("USER_CREATED"), object: nil)
         
     }
+    
     override func viewWillAppear(_ animated: Bool) {
-   
-
-    }
-    @objc func userDataDidChange(_ notif: Notification){
-        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
-            if let u = user {
-                self.username.text = "환영합니다!"
-                self.loginBtn.setTitle("Logout", for: .normal)
-                print("USER_SIGNED_IN")
-            } else {
-                self.username.text = "로그인하세요!"
-                self.loginBtn.setTitle("Login", for: .normal)
-                print("USER_SIGNED_OUT")
-            }
-            
+        if Auth.auth().currentUser != nil{
+            self.username.text = "환영합니다! \((Auth.auth().currentUser?.displayName)!)님"
+            self.loginBtn.setTitle("Logout", for: .normal)
+            print("USER_SIGNED_IN")
+        }else{
+            self.username.text = "로그인하세요!"
+            self.loginBtn.setTitle("Login", for: .normal)
+            print("USER_SIGNED_OUT")
         }
     }
+    
+    @objc func userDataDidChange(_ notif: Notification){}
     
     @IBAction func loginBtnPressed(_ sender: Any) {
         if Auth.auth().currentUser != nil {
