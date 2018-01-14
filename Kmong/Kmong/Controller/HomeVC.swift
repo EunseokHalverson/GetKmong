@@ -42,12 +42,6 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
             return CategoryCell()
         }
     }
-    @objc func handleTap(){
-        view.endEditing(true)
-    }
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        searchBar.resignFirstResponder()
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -56,8 +50,7 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         pageVC = storyboard.instantiateViewController(withIdentifier: "HomePageView")
         collectionVC = storyboard.instantiateViewController(withIdentifier: "HomeCollectionView")
         urlVC = storyboard.instantiateViewController(withIdentifier: "HomeUrlView")
-        let tap = UITapGestureRecognizer(target: self, action: #selector(CreateAccountVC.handleTap))
-        view.addGestureRecognizer(tap)
+
         
         viewControllers = [pageVC, collectionVC, urlVC]
         uiViews = [homePageView, homeCollectionView, homeUrlView]

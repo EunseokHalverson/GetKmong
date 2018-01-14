@@ -55,6 +55,12 @@ class SubMainVC: UIViewController {
             alert.addAction(UIAlertAction(title: "확인", style: .default))
             self.present(alert, animated: true)
             
+        }else if index == 3 && Auth.auth().currentUser == nil{
+            let alert = UIAlertController(title: "서비스를 보시려면 로그인해주세요.",
+                                          message: "",
+                                          preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "확인", style: .default))
+            self.present(alert, animated: true)
         }else{
             tabs[previouseIndex].isSelected = false
             let previousVC = viewControllers[previouseIndex]

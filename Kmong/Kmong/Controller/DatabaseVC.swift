@@ -28,44 +28,51 @@ class DatabaseVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     var getName: String? = ""
     
     override func viewWillAppear(_ animated: Bool) {
+        
         NotificationCenter.default.addObserver(self, selector: #selector(userDataDidChange), name: Notification.Name("NEW_POST"), object: nil)
-        self.serviceList.removeAll()
-        self.tableView.reloadData()
-        
-        spinner.isHidden = false
-        tempView.isHidden = false
-        spinner.startAnimating()
-    
-        
-        self.ref = Database.database().reference().child("Service")
-        self.ref?.observe(.childAdded, with: { (snapshot) in
-            let snapshotValue = snapshot.value as! NSDictionary
-            let seller = snapshotValue["seller"] as! String
-            self.getName = seller
-            let desc = snapshotValue["description"] as! String
-            let imageName = snapshotValue["imageUrl"] as! String
-            let price = snapshotValue["price"] as! String
-            let rating = snapshotValue["rating"] as! Double
-            let uid = snapshotValue["uid"] as! String
-            let storage = Storage.storage()
-            let storageRef = storage.reference()
-            let islandRef = storageRef.child("Images/\(imageName)")
+        if Auth.auth().currentUser?.uid != nil{
+            self.serviceList.removeAll()
+            self.tableView.reloadData()
             
-            islandRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
-                if let error = error {
-                    print(error.localizedDescription)
-                } else {
-                    let image = UIImage(data: data!)
-                    let service = Service(seller: seller, price: price, image: image,  description: desc, rating: rating, imageName: imageName, uid: uid)
-                    
-                    self.serviceList.append(service)
-                    self.tableView.reloadData()
-                    self.spinner.isHidden = true
-                    self.tempView.isHidden = true
-                    self.spinner.stopAnimating()
+            spinner.isHidden = false
+            tempView.isHidden = false
+            spinner.startAnimating()
+            
+            
+            self.ref = Database.database().reference().child("Service")
+            self.ref?.observe(.childAdded, with: { (snapshot) in
+                let snapshotValue = snapshot.value as! NSDictionary
+                let seller = snapshotValue["seller"] as! String
+                self.getName = seller
+                let desc = snapshotValue["description"] as! String
+                let imageName = snapshotValue["imageUrl"] as! String
+                let price = snapshotValue["price"] as! Double
+                let rating = snapshotValue["rating"] as! Double
+                let uid = snapshotValue["uid"] as! String
+                let storage = Storage.storage()
+                let storageRef = storage.reference()
+                let islandRef = storageRef.child("Images/\(imageName)")
+                
+                islandRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+                    if let error = error {
+                        print(error.localizedDescription)
+                    } else {
+                        let image = UIImage(data: data!)
+                        let service = Service(seller: seller, price: price, image: image,  description: desc, rating: rating, imageName: imageName, uid: uid)
+                        
+                        self.serviceList.append(service)
+                        self.tableView.reloadData()
+                        self.spinner.isHidden = true
+                        self.tempView.isHidden = true
+                        self.spinner.stopAnimating()
+                    }
                 }
-            }
-        })
+            })
+            
+        }else{
+            print("no user")
+        }
+        
         
     }
     
@@ -94,7 +101,14 @@ class DatabaseVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
             
             cell.serviceSeller.text = serviceList[indexPath.row].seller
             cell.serviceDsc.text = serviceList[indexPath.row].description
-            cell.servicePrice.text = serviceList[indexPath.row].price
+            
+            let servicePrice = serviceList[indexPath.row].price! as NSNumber
+            
+            let currency = NumberFormatter()
+            currency.numberStyle = .currency
+            currency.locale = Locale(identifier: "ko_KR")
+            let moneyValue = currency.string(from: servicePrice)
+            cell.servicePrice.text = moneyValue
             cell.serviceImg.image = serviceList[indexPath.row].image
             
             let starRatingView = SwiftyStarRatingView()

@@ -73,7 +73,7 @@ class PostDataVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
             let newPost = ["description": descriptionText.text!,
                            "imageUrl": ImageName,
                            "seller": (Auth.auth().currentUser?.displayName)!,
-                           "price": priceText.text!,
+                           "price": Double(priceText.text!)!,
                            "rating": 0,
                            "uid": (Auth.auth().currentUser?.uid)!] as [String : Any]
             newPostRef.updateChildValues(newPost)

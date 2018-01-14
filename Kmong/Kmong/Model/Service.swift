@@ -22,7 +22,7 @@ struct Constants
 class Service{
     
     var seller: String?
-    var price: String?
+    var price: Double?
     var image: UIImage?
     var imageName: String?
     //var title: String?
@@ -31,7 +31,7 @@ class Service{
     var uid: String?
     
     
-    init(seller: String, price: String?, image: UIImage?, description: String?, rating: Double?, imageName: String?, uid: String?){
+    init(seller: String, price: Double?, image: UIImage?, description: String?, rating: Double?, imageName: String?, uid: String?){
         self.seller = seller
         self.price = price
         self.image = image
